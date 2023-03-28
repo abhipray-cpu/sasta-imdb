@@ -1,0 +1,320 @@
+@media only screen and (min-width:900px){
+    #rev-container{
+        width: 100vw;
+        height: 480px;
+        background-color: white;
+        display: grid;
+        grid-template-columns: 55fr 45fr;
+    }
+    #rate{
+        width:55vw;
+        height: 480px;
+        overflow: hidden;
+        margin-bottom:2.4px;
+    }
+    #rate h2{
+    width: 94px;
+    height: 51px;
+    margin-left: 26px;
+    margin-top: 27px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 51px;
+    /* identical to box height */
+    
+    
+    color: #000000;
+    }
+    .star-widget {
+        margin-left: 390px;
+        align-self: start;
+        width: 400px;
+    }
+    
+    .star-widget label {
+        font-size: 20px;
+        color: #141313;
+        padding: 10px;
+        float: right;
+        transition: all 0.2s ease;
+    }
+    
+    input:not(:checked)~label:hover,
+    input:not(:checked)~label:hover~label {
+        color: rgba(233, 198, 16, 1);
+    }
+    
+    input:checked~label {
+        color: rgba(233, 198, 16, 1);
+    }
+    
+    input#rate-5:checked~label {
+        color: rgba(233, 198, 16, 1);
+        text-shadow: rgba(233, 198, 16, 1)
+    }
+    
+    .fa-star {
+        font-size: 8px;
+    }
+    #content{
+        width: 775px;
+    height: 254px;
+    margin-left:26px;
+    font-family: 'Inter';
+    font-size:20px;
+    font-weight: 350;
+    line-height: 18px;
+    padding:2px;
+    }
+    #reviews{
+        width:45vw;
+        height: 480px;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    #revs{
+        width:45vw;
+        height: 440px;
+        overflow-x: hidden;
+        overflow-y: auto;  
+    }
+    #revs:-webkit-scrollbar{
+        display: none;
+    }
+    
+    #btn {
+        margin-top: 6px;
+        width: 138px;
+        height: 40px;
+        background: rgb(231, 197, 31);
+        border-radius: 10px;
+        color: black;
+        float: right;
+        margin-right:56px;
+        border: none;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 26px;
+        /* identical to box height */
+        cursor: pointer;
+    }
+    #reviews h2{
+    width: 103px;
+    height: 30px;
+    margin-left: 42px;
+    margin-top: 29px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 30px;
+    cursor: pointer;
+    color: #000000;
+    }
+    
+    .review{
+        width:40vw;
+        max-height: 130px;
+        margin-left: 42px;
+    }
+    .review h3{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 30px;
+    margin-bottom: 0px;
+    color: #000000;
+    }
+    .user-rate{
+    width: 65px;
+    height: 45px;
+    background: #E9C610;
+    border-radius: 7px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 39px;
+    text-align: center;
+    color: #000000;
+    }
+    .review p{
+        margin-top:0px;
+        font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 25px;
+    
+    color: #000000;
+    }
+    #all{
+        font-family: 'Inter';
+        font-size: 21px;
+        font-weight: 350;
+        cursor: pointer;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width:480px){
+    #rev-container{
+        width: 100vw;
+        height: 580px;
+        background-color: white;
+    }
+    #rate{
+        width:100vw;
+        height: 300px;
+        overflow: hidden;
+    }
+    #rate h2{
+    width: 94px;
+    height: 41px;
+    margin-left: 10px;
+    margin-top: 10px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 41px;
+    /* identical to box height */
+    color: #000000;
+    }
+    .star-widget {
+        float: right;
+        margin-right:20px;
+        align-self: start;
+        width: 300px;
+    }
+    
+    .star-widget label {
+        font-size: 20px;
+        color: #141313;
+        padding: 10px;
+        float: right;
+        transition: all 0.2s ease;
+    }
+    
+    input:not(:checked)~label:hover,
+    input:not(:checked)~label:hover~label {
+        color: rgba(233, 198, 16, 1);
+    }
+    
+    input:checked~label {
+        color: rgba(233, 198, 16, 1);
+    }
+    
+    input#rate-5:checked~label {
+        color: rgba(233, 198, 16, 1);
+        text-shadow: rgba(233, 198, 16, 1)
+    }
+    
+    .fa-star {
+        font-size: 8px;
+    }
+    #content{
+        width: 90vw;
+    height: 144px;
+    margin-left:5vw;
+    font-family: 'Inter';
+    font-size:20px;
+    font-weight: 350;
+    line-height: 18px;
+    padding:2px;
+    }
+    #btn {
+        float: right;
+        margin-right:20px;
+width: 126px;
+height: 41px;
+background: #E9C610;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 13px;
+font-family: 'Inter';
+text-align: center;
+font-size:24px;
+line-height: 41px;
+font-weight: 350;
+outline:none;
+border:none;
+    }
+#reviews{
+    width: 100vw;
+    height: 280px;
+    margin-top:0px
+}
+#revs{
+    width:100vw;
+    height: 240px;
+    overflow-x: hidden;
+    overflow-y: auto;  
+}
+#revs:-webkit-scrollbar{
+    display: none;
+}
+#reviews h2{
+    width: 94px;
+    height: 35px;
+    margin-left: 10px;
+    margin-top: 10px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 35px;
+    /* identical to box height */
+    color: #000000;
+        }
+        
+        .review{
+            width:100vw;
+            max-height: 130px;
+            margin-left: 20px;
+        }
+        .review h3{
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 25px;
+        line-height: 30px;
+        margin-bottom: 0px;
+        color: #000000;
+        }
+        .user-rate{
+        width: 65px;
+        height: 45px;
+        background: #E9C610;
+        border-radius: 7px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 21px;
+        line-height: 39px;
+        text-align: center;
+        color: #000000;
+        }
+        .review p{
+            margin-top:0px;
+            font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 25px;
+        
+        color: #000000;
+        }
+        #all{
+            font-family: 'Inter';
+            font-size: 21px;
+            font-weight: 350;
+            cursor: pointer;
+            text-align: center;
+            margin-bottom:20px;
+        }
+}

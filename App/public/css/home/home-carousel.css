@@ -1,0 +1,158 @@
+@media only screen and (min-width:900px){
+#car{
+    width:100vw;
+    display: grid;
+    overflow-x: hidden;
+    grid-template-columns: 60fr 40fr;
+    margin-left: 18px;
+    margin-top:7px;
+    z-index:0;
+    margin-bottom:30px;
+}
+#suggestions{
+    width:60vw;
+    max-width: 59vw;
+    height:30vh;
+    max-height: 604px;
+
+}
+
+.car-img{
+width:59vw;
+height: 504px;
+}
+
+.text{
+    position: absolute;
+    top:250px;
+    background-color: rgba(0, 0, 0, 0.164);
+    
+}
+.text h5{
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 38px;
+line-height: 46px;
+/* identical to box height */
+
+
+color: #FFFFFF;
+
+}
+.text p{
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 20px;
+line-height: 19px;
+
+color: #FFFFFF;
+}
+.rating{
+width: 73px;
+height: 36px;
+background: #dfbc0a;
+color:white;
+}
+#trending{
+height:504px;
+overflow-y: auto;
+overflow-x: hidden;
+}
+#trending::-webkit-scrollbar{
+    display: none;
+}
+.trend-header{
+width: 220px;
+height: 36px;
+left:70vw;
+top: 7px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 30px;
+line-height: 36px;
+margin-bottom:20px;
+color: #FFFFFF;
+}
+.trend-item{
+    width: 573px;
+    height: 114px;
+    margin-bottom:20px;
+    display: grid;
+    cursor: pointer;
+    grid-template-columns: 200px 300px;
+}
+.trend-item img{
+    width: 200px;
+    height: 114px;
+    
+}
+.trend-text{
+    margin-left:12px;
+    width:24vw;
+    max-width:300px;
+    height: 114px;
+    overflow: hidden;
+}
+.trend-text h5{
+ font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 30px;
+line-height: 36px;
+
+color: #FFFFFF;
+
+}
+.trend-text p{
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 14px;
+line-height: 19px;
+margin-top:-7px;
+color: #FFFFFF;
+}
+}
+@media only screen and (max-width:480px){
+    
+    #trending{
+        display:none;
+    }
+    
+    #car{
+        position: absolute;
+        width:100vw;
+        overflow-x: hidden;
+        margin-top:2px;
+        height: 215px;
+        z-index:0 !important;
+        
+    }
+    .car-img{
+        width:100vw;
+        height: 215px;
+    }
+    .text{
+        background-color: rgba(0, 0, 0, 0.164);
+        
+    }
+    .rating{
+
+        background: #dfbc0a;
+        color:white;
+        }
+        .text p{
+            display: none;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 300;
+            font-size: 20px;
+            line-height: 19px;
+            
+            color: #FFFFFF;
+            }
+}

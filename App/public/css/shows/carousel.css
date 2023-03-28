@@ -1,0 +1,40 @@
+@media only screen and (min-width:900px){
+    #car{
+        position: relative;
+        width:60vw;
+        overflow-x: hidden;
+        margin-left: 1vw;
+        margin-top:7px;
+        margin-bottom:30px;
+    }
+    #suggestions{
+        position: relative;
+        width:60vw;
+        height:500px;
+    }
+    
+    .car-img{
+    width:60vw;
+    height: 500px;
+    }
+    
+    
+    
+    }
+    @media only screen and (max-width:480px){
+        
+        
+        #car{
+            position: relative;
+            width:100vw;
+            overflow-x: hidden;
+            margin-top:2px;
+            height: 215px;
+            z-index:0 !important;
+            
+        }
+        .car-img{
+            width:100vw;
+            height: 215px;
+        }
+    }

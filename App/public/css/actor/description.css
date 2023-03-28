@@ -1,0 +1,40 @@
+@media only screen and (min-width:900px){
+    #description{
+        position: relative;
+        width: 90vw;
+        margin-top:10px;
+        height: fit-content;
+        max-height: 340px;
+        margin-left:2vw;
+        margin-right:2vw;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 21px;
+        line-height: 30px;
+        overflow: auto;
+        color: #ffffffdc;
+        }
+        #description::-webkit-scrollbar{
+            display: none;
+        }
+}
+@media only screen and (max-width:480px){
+    #description{
+        position: relative;
+        width: 90vw;
+        height: 450px;
+        margin-top:10px;
+        margin-left:5vw;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 21px;
+        line-height: 30px;
+        overflow: auto;
+        color: #ffffff;
+        }
+        #description::-webkit-scrollbar{
+            display: none;
+        }
+}

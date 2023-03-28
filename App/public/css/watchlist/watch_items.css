@@ -1,0 +1,268 @@
+@media only screen and (min-width:900px){
+    #item-container{
+        width:100vw;
+    }
+    .item{
+        width:100vw;
+        height:340px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.72);
+        display: grid;
+        grid-template-columns:449px 44vw 20vw;
+        overflow: hidden;
+    }
+    .item-image img{
+        width: 449px; 
+        height: 296px;
+        margin-left:10px;
+        margin-top:10px;
+    }
+    .mov-info{
+        width:55vw;
+        margin-left:20px;
+    }
+    
+    .mov-title{
+        margin-top:10px;
+        margin-left:-3px;
+        font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 39px;
+    max-width:40vw;
+    /* identical to box height */
+    
+    
+    color: #FFFFFF;
+    }
+    .rating{
+width: 60px;
+height: 55px;
+margin-left:6px;
+background: #D8B814;
+border-radius: 7px;
+    }
+
+.genres{
+    font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 18px;
+line-height: 22px;
+/* identical to box height */
+
+max-width:40vw;
+color: rgba(255, 255, 255, 0.57);
+}
+.cast{
+    font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 18px;
+line-height: 22px;
+/* identical to box height */
+margin-top:12px;
+max-width:40vw;
+color: #FFFFFF;
+}
+.description{
+    font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 18px;
+line-height: 22px;
+
+color: #9C9999;
+margin-top:7px;
+max-width:42vw;
+max-height:250px;
+}
+.mob-upvote{
+    display:none;
+}
+.mob-button{
+    display: none;
+}
+.button{
+width: 215px;
+margin-top:-100px !important;
+height: 53px;
+margin-left:70vw;
+background: #D8B814;
+}
+.buttons{
+    width:20vw;
+    margin-left:1.5vw;
+    
+}
+
+
+.votes {
+    font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 24px;
+line-height: 29px;
+margin-top:20px;
+/* identical to box height */
+
+
+color: #FFFFFF;
+}
+.other_watch{
+    font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 24px;
+line-height: 29px;
+/* identical to box height */
+margin-top:30px;
+
+color: #FFFFFF;
+}
+.val{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 29px;
+    /* identical to box height */
+    margin-top:30px;
+    margin-left:3px;
+    color:#D8B814;
+}   
+.btn{
+    cursor: pointer;
+width: 215px;
+height: 53px;
+background: #D8B814;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 25px;
+line-height: 53px;
+/* identical to box height */
+text-align: center;
+
+color: #FFFFFF;
+margin-top:40px;
+border-radius:10px;
+}
+}
+@media only screen and (max-width:480px){
+    #item-container{
+        width:100vw;
+    }
+    .item{
+        width:100vw;
+        height:220px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.72);
+        display: grid;
+        grid-template-columns:35vw 75vw;
+        overflow: hidden;
+    }
+    .item-image img{
+        max-width: 135px; 
+        width:35vw;
+        height: 174px;
+        margin-left:5px;
+        margin-top:18px;
+    }
+    .mov-info{
+        width:65vw;
+        margin-left:8px;
+    }
+    
+    .mov-title{
+        margin-top:10px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 21px;
+        line-height: 25px;
+        max-width:60vw;
+        color: #FFFFFF;
+        margin-left:10px;
+    }
+    .rating{
+width: 60px;
+height: 55px;
+margin-left:6px;
+background: #D8B814;
+border-radius: 7px;
+max-width:60vw;
+    }
+
+.genres{
+    font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 17px;
+line-height: 21px;
+/* identical to box height */
+
+
+color: #5A5757;
+/* identical to box height */
+margin-left:8px;
+max-width:60vw;
+}
+.cast{
+   display: none;
+}
+.description{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    
+    color: rgba(255, 255, 255, 0.64);
+max-width:60vw;
+margin-left:8px;
+max-height:100px;
+overflow: hidden;
+}
+.button,
+.buttons,
+.other_watch,
+.btn{
+display: none;
+}
+.mob-upvote{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color:white;
+    margin-top:10px;
+    float:left;
+}
+.val{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 29px;
+    /* identical to box height */
+    color:#D8B814;
+    
+    margin-left:8px;
+} 
+.mob-button{
+   float:right;
+   margin-right: 29px;
+   background: #D8B814;
+   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+   border-radius: 5px;
+   width: 99px;
+height: 29px;
+margin-top:15px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 18px;
+line-height: 29px;
+text-align: center;
+color: #FFFFFF;
+}
+}

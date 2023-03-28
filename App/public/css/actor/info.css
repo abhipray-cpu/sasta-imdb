@@ -1,0 +1,125 @@
+@media only screen and (min-width:900px){
+    #info-container{
+        margin-top:6px;
+        width: 100vw;
+        display: grid;
+        grid-template-columns: 55vw 45vw;
+        height: 340px;
+        overflow: hidden;
+    }
+    #actor-details{
+        width: 55vw;
+        height: 340px;
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: 331px 35vw;
+    }
+    #image{
+        margin-left:15px;
+        margin-top:20px;
+        width: 325px;
+        height: 300px;
+    }
+    #image img{
+        width: 300px;
+        height: 300px;
+        border-radius: 300px;
+    }
+    #details{
+        margin-top:60px;
+    }
+    #details h2{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 39px;
+    /* identical to box height */
+    color: #FFFFFF;
+    margin-bottom:20px;
+    
+    }
+    .label{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 31px;
+    
+    color: rgba(255, 255, 255, 0.58);
+    
+    }
+    .value{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    /* identical to box height */
+    
+    
+    color: #FFFFFF;
+    }
+}
+@media only screen and (max-width:480px){
+    #info-container{
+        width: 100vw;
+        height: 180px;
+        overflow: hidden;
+    }
+    #actor-details{
+        width: 100vw;
+        height: 180px;
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: 130px 60vw
+    }
+    #image{
+        width:130px;
+        height: 180px;
+    }
+    #image img{
+        margin-top:20px;
+        width: 125px;
+        height: 125px;
+        border-radius: 125px;
+    }
+    #details{
+        margin-top:25px;
+        width: 60vw;
+        margin-left:2px;
+    }
+    #details h2{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 21px;
+    
+    /* identical to box height */
+    color: #FFFFFF;
+    margin-bottom:4px;
+    
+    }
+    .label{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.58);
+    margin-top:2px;
+    margin-bottom:2px;
+    
+    }
+    .value{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    /* identical to box height */
+    margin-top:2px;
+    margin-bottom:2px;
+    
+    color: #FFFFFF;
+    }
+    
+}

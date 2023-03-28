@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/public/favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="/css/login/login.css">
+</head>
+
+<body>
+    <% if(error) {%>
+        <div class="alert">
+            <% if(error.msg == '1'){  %>
+            <h3>
+                This username already exists
+            </h3>
+            <% } %>
+            <% if(error.msg == '2'){  %>
+                <h3>
+                    Enter a valid email
+                </h3>
+                <% } %>
+                <% if(error.msg == '3'){  %>
+                    <h3>
+                        This email already exists
+                    </h3>
+                    <% } %>
+                    <% if(error.msg == '4'){  %>
+                        <h3>
+                            Enter atleast 10 characters long password
+                        </h3>
+                        <% } %>
+                        <% if(error.msg == '5'){  %>
+                            <h3>
+                                Password mismatch
+                            </h3>
+                            <% } %>
+        </div>
+        <% } %>
+                    <div id="container">
+                        <div id="wallpaper">
+                            <img src="/images/wallpaper.png" alt="world" id="pic">
+                            <img src="/images/icon.png" alt="icon" id="icon">
+                        </div>
+                        <div id="form">
+                            <div id="login">
+                               <h1> Signup</h1>
+                            </div>
+                           
+                            <form action="/signup" method="POST">
+                                <input type="hidden" value="<%= csrfToken %>" name="_csrf">
+                                <!--add conditioned input fields-->
+                                <div class="input">
+                                    <input type="text" id="name" name="name" placeholder="Username">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                </div>
+                                <div class="input">
+                                    <input type="email" id="email" name="email" placeholder="email">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                </div>
+                                <div class="input">
+                                    <input type="text" name="contact" id="contact" placeholder="Contact">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-smartphone"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                                </div>
+                                <div class="input">
+                                    <input type="password" id="password" name="password" placeholder="Password">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-lock"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                                </div>
+                                <div class="input">
+                                    <input type="password" id="confirm" name="confirm" placeholder="Enter password again">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-lock"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                                </div>
+                                <button id="button" type="submit">
+                Signup
+        </button>
+                            </form>
+                            <h2 id="alternate">Already have an account? <span id="strong"><a href="/login" style="text-decoration:none; color:white">Login</a> </span></h2>
+                        </div>
+
+                    </div>
+</body>
+
+</html>

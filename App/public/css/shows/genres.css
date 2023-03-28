@@ -1,0 +1,150 @@
+@media only screen and (min-width:900px){
+    #genre-container{
+        position: relative;
+        width:100vw;
+        height:250px;
+        display: grid;
+        grid-template-columns: 60fr 40fr;
+        }
+        #genres{
+            width:59vw;
+            margin-left:1vw;
+            height:50px;
+            display: grid;
+            grid-template-columns: repeat(4,160px);
+        }
+        .genre{
+        width: 150px;
+        height: 48px;
+        background: #D8B814;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+        margin-left:5px;
+        margin-right:5px;
+        margin-top:5px;
+        margin-bottom:5px;
+        text-align: center;
+        line-height: 48px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 21px;
+        color: #FFFFFF;
+        
+        }
+        #buttons{
+            width:37vw;
+            margin-left:2vw;
+            padding-left:10vw;
+        }
+        .button{
+            width: 250px;
+        height: 50px;
+        background: #E9C610;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 13px;
+        margin-top:8.5px;
+        margin-bottom: 8.5px;
+        text-align: center;
+        line-height: 50px;
+        cursor: pointer;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 50px;
+        /* identical to box height */
+        
+        
+        color: #FFFFFF;
+        }
+        .button:hover{
+        animation: buttons;
+        animation-duration: 0.4s;
+        animation-fill-mode: forwards;
+        animation-delay: 0.1s;
+        }
+        @keyframes buttons{
+            from{
+                color: white;
+                background-color:#E9C610 ;
+            }
+            to{
+                color: #E9C610;
+                background-color: black;
+            }
+        }
+}
+
+@media only screen and (max-width:480px){
+    #genre-container{
+        width:100vw;
+        max-height:3s50px;
+        display: grid;
+        }
+        #genres{
+            width:100vw;
+            max-height:190px;
+            display: grid;
+            padding-left: 4vw;
+            grid-template-columns: repeat(3,120px);
+        }
+        .genre{
+        width: 115px;
+        height: 40px;
+        background: #D8B814;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+        margin-top:5px;
+        margin-bottom:5px;
+        text-align: center;
+        line-height: 40px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 19px;
+        color: #FFFFFF;
+        
+        }
+        #buttons{
+          margin-top:12px;
+          padding-left:10vw;
+        }
+        .button{
+            width: 80vw;
+        height: 50px;
+        background: #E9C610;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 13px;
+        margin-top:9.5px;
+        margin-bottom: 9.5px;
+        text-align: center;
+        line-height: 50px;
+        cursor: pointer;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 50px;
+        /* identical to box height */
+        
+        
+        color: #FFFFFF;
+        }
+        .button:hover{
+        animation: buttons;
+        animation-duration: 0.4s;
+        animation-fill-mode: forwards;
+        animation-delay: 0.1s;
+        }
+        @keyframes buttons{
+            from{
+                color: white;
+                background-color:#E9C610 ;
+            }
+            to{
+                color: #E9C610;
+                background-color: black;
+            }
+        }
+}

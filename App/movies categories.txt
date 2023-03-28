@@ -1,0 +1,31 @@
+movies categories
+
+'Adventure', 'Comedy',
+  'Crime',     'Drama',
+  'Family',    'Fantasy',
+  'Film-Noir', 'History',
+  'Horror',    'Mystery',
+  'Romance',   'Sci-Fi',
+  'Sport',     'Thriller',
+  'War',       'Western',
+  'action',    'comedy',
+  'drama',     'horror'
+
+
+shows categories
+'Adventure',   'Biography',
+  'Comedy',      'Crime',
+  'Documentary', 'Drama',
+  'Family',      'Fantasy',
+  'History',     'Horror',
+  'Music',       'Musical',
+  'Mystery',     'Reality-TV',
+  'Romance',     'Sci-Fi',
+  'Sport',       'Talk-Show',
+  'Thriller',    'Western',
+  'action',      'comedy',
+  'drama',       'horror'
+
+
+common in both:Adventure,Comedy,Crime,Horror,Romance,Sci-Fi,drama,Fantasy,Sport,Western.Mystery,History,Musical,
+Documentary

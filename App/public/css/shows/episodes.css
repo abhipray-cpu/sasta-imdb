@@ -1,0 +1,136 @@
+@media only screen and (min-width:900px)
+{
+    #ep-container{
+        width:100vw;
+    
+    }
+    #ep-header{
+        font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 51px;
+    /* identical to box height */
+    margin-left:4vw;
+    
+    color: #FFFFFF;
+    
+    }
+    .ep-row{
+        width:100vw;
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding-left:2vw;
+        margin-top:5px;
+    }
+    .ep-row::-webkit-scrollbar{
+        display: none;
+    }
+    .row-title{
+        font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 39px;
+    margin-left:2vw;
+    /* identical to box height */
+    color: #ffffffbb;
+    cursor: pointer;
+    
+    }
+    .episode{
+        width:230px;
+        height:220px;
+        margin-left:8px;
+        margin-right:8px;
+        cursor: pointer;
+    }
+    .episode img{
+        width:230px;
+        height: 160px;
+    }
+    .episode h4{
+        text-align: center;
+        width:230px;
+        max-height:60px;
+        font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 39px;
+    /* identical to box height */
+    
+    
+    color: #FFFFFF;
+    }
+}
+
+@media only screen and (max-width:480px){
+    #ep-container{
+        width:100vw;
+    
+    }
+    #ep-header{
+        font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 51px;
+    /* identical to box height */
+    margin-left:1vw;
+    
+    color: #FFFFFF;
+    
+    }
+    .ep-row{
+        width:100vw;
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding-left:2vw;
+        margin-top:5px;
+    }
+    .ep-row::-webkit-scrollbar{
+        display: none;
+    }
+    .row-title{
+        font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 39px;
+    margin-left:2vw;
+    /* identical to box height */
+    color: #ffffffbb;
+    cursor: pointer;
+    
+    }
+    .episode{
+        width:230px;
+        height:220px;
+        margin-left:8px;
+        margin-right:8px;
+        cursor: pointer;
+    }
+    .episode img{
+        width:230px;
+        height: 160px;
+    }
+    .episode h4{
+        text-align: center;
+        width:230px;
+        max-height:60px;
+        font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 39px;
+    /* identical to box height */
+    
+    
+    color: #FFFFFF;
+    }
+}

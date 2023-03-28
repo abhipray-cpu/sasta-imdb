@@ -1,0 +1,113 @@
+@media only screen and (min-width:900px)
+{
+    #men-header{
+        width: 100vw;
+        height:90vh;
+    }
+    
+    #options{
+        width:100vw;
+        text-align: center;
+        line-height: 80px;
+    }
+    .active{
+    font-family: 'Inters';
+    font-size:28px;
+    font-weight: 500;
+    line-height: 28px;
+    color:rgba(216, 184, 20, 1);
+    cursor: pointer;
+    }
+    .passive{
+        font-family: 'Inter';
+        font-size:23px;
+        font-weight: 400;
+        line-height: 24px;
+        color:white;
+        margin-left:20px;
+        cursor: pointer;
+    }
+    #list{
+        text-decoration: none;
+        list-style-type: none;
+        height:70vh;
+        overflow:auto;
+    }
+    #list::-webkit-scrollbar{
+        display: none;
+    }
+    .options{
+        text-align: center;
+        color:white;
+        font-family: 'Inter';
+        font-size:27px;
+        line-height: 27px;
+        font-weight: 200;
+        cursor: pointer;
+        margin-top:9px;
+        margin-bottom:9px;
+        font-style: italic;
+    }
+    .options:hover{
+        color:rgba(216, 184, 20, 1);
+        font-weight: 400;
+        font-size:29px;
+    }
+}
+
+@media only screen and (max-width:480px)
+{
+    #men-header{
+        width: 100vw;
+        height:70vh;
+    }
+    
+    #options{
+        width:100vw;
+        text-align: center;
+        line-height: 80px;
+    }
+    .active{
+    font-family: 'Inters';
+    font-size:28px;
+    font-weight: 500;
+    line-height: 28px;
+    color:rgba(216, 184, 20, 1);
+    cursor: pointer;
+    }
+    .passive{
+        font-family: 'Inter';
+        font-size:23px;
+        font-weight: 400;
+        line-height: 24px;
+        color:white;
+        margin-left:20px;
+        cursor: pointer;
+    }
+    #list{
+        text-decoration: none;
+        list-style-type: none;
+        height:50vh;
+        overflow:auto;
+    }
+    #list::-webkit-scrollbar{
+        display: none;
+    }
+    .options{
+        text-align: center;
+        color:white;
+        font-family: 'Inter';
+        font-size:27px;
+        line-height: 27px;
+        font-weight: 200;
+        cursor: pointer;
+        margin-top:9px;
+        margin-bottom:9px;
+        font-style: italic;
+    }
+    .options:hover{
+        color:rgba(216, 184, 20, 1);
+        font-weight: 400;
+        font-size:29px;
+    }
+}

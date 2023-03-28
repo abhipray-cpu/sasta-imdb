@@ -1,0 +1,33 @@
+<div id="movie-container">
+    
+    <% Object.keys(items).forEach(catg=>{ %>
+    <div class="movie-row">
+        <h3 class="row-title"><%= catg %></h3>
+        <div class="row-items">
+            
+            <% items[catg]['movie'].forEach(item=>{ %>
+            <div class="row-item">
+                <img class="item-image" src="<%= item.images[0] %>" alt="<%= item.title %>">
+                <h4 class="item-title"><%= item.title %></h4>
+                <h3 class="item-description"> <%= item.description.slice(0,320) %> </h3>
+                <div class="rating">
+                    <h3><%= item.ratings %></h3>
+                </div>
+            </div>
+            <% }) %>
+
+            <% items[catg]['show'].forEach(item=>{ %>
+            <div class="row-item">
+                <img class="item-image" src="<%= item.images[0] %>" alt="<%= item.title %>">
+                <h4 class="item-title"><%= item.title %></h4>
+                <h3 class="item-description"> <%= item.description.slice(0,320) %> </h3>
+                <div class="rating">
+                    <h3><%= item.ratings %></h3>
+                </div>
+            </div>
+            <% }) %>
+        </div>
+    </div>
+  <% }) %>
+  
+</div>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/public/favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/login/login.css">
+    <title>Login</title>
+</head>
+
+<body>
+    <% if(err){ %>
+        <div class="alert">
+            <% if(err== '1'){ %>
+                <h3>Username not found</h3>
+                <% } %>
+                <% if(err == '2'){ %>
+                    <h3>Wrong password</h3>
+                    <% } %>
+                    <% if(err == '3'){ %>
+                        <h3>Login first!</h3>
+                        <% } %>
+        </div>
+        <% } %>
+            <div id="container">
+
+                <div id="wallpaper">
+                    <img src="/images/wallpaper.png" alt="world" id="pic">
+                    <img src="/images/icon.png" alt="icon" id="icon">
+                </div>
+                <div id="form">
+                    <div id="login">
+                      <h1>Login</h1>
+                    </div>
+                    <h3 id="smallOnly">Please signin to continue</h3>
+                    <form action="/login" method="POST">
+
+                        <input type="hidden" value="<%= csrfToken %>" name="_csrf">
+                        <!--conditional input fields-->
+                        <% if(err == '1') {%>
+                            <div class="error">
+                                <input type="text" id="name" name="name" placeholder="Username" style="color:white">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="red" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                            </div>
+                            <% } else {%>
+                                <div class="input">
+                                    <input type="text" id="name" name="name" placeholder="Username" value="<%= user %>">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                </div>
+                                <% } %>
+                                    <% if(err == '2') {%>
+                                        <div class="error">
+                                            <input type="password" id="password" name="password" placeholder="Password" style="color:white">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="red" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-lock"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                                        </div>
+                                        <% } else {%>
+                                            <div class="input">
+                                                <input type="password" name="password" id="username" placeholder="Password">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-lock"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                                            </div>
+                                            <% } %>
+                        <div id="thumb">
+                            <div id="check">
+                                <input type="checkbox" style="width:17px;height:17px;">
+                                <h3>Remember me</h3>
+                            </div>
+                            <div id="forget">
+                                <a href="/change_password" style="color:white;text-decoration: none;">
+                                forgot password?
+                              </a>
+                            </div>
+
+                        </div>
+                        <button id="button" type="submit">Login</button>
+                    </form>
+
+                    <div id="links">
+                        <span> <a href="#" class="jump">About</a>
+                <a href="#" class="jump">User policy</a>
+                <a href="#" class="jump">Terms and service</a>
+                <a href="#" class="jump">Cache Policy</a></span>
+                    </div>
+                    <h2 id="alternate">Dont't have an account? <span id="strong">
+                        <a href="/signup" style="text-decoration:none;color:white">Signup</a>
+                    </span></h2>
+                </div>
+
+            </div>
+</body>
+
+</html>

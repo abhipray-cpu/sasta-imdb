@@ -1,0 +1,72 @@
+@media only screen and (min-width:900px){
+    #fam-container{
+        width:50vw;
+        margin-top:12px;
+    }
+    #fam-header{
+        font-weight: 600;
+        font-size:32px;
+        color: white;
+        font-family: 'Inter';
+        margin-left:2vw;
+     }   
+    
+     .fam-item{
+        margin-left:3vw;
+     }
+     .fam-label{
+        font-family: 'Inter';
+        font-size: 28px;
+        font-weight: 400;
+        color:white;
+        margin-bottom:2px;
+     }
+     .fam-val{
+        font-family: 'Inter';
+        font-size: 22px;
+        font-weight: 250;
+        color:white;
+        margin-left:15px;
+        margin-bottom:2px;
+        margin-top:1px;
+        margin-bottom:1px;  
+     }
+}
+@media only screen and (max-width:480px){
+    #fam-container{
+        width:100vw;
+        margin-top:6px;
+    }
+    #fam-header{
+        font-weight: 00;
+        font-size:28px;
+        color: white;
+        font-family: 'Inter';
+        margin-left:4vw;
+     }   
+    
+     .fam-item{
+        margin-left:5vw;
+        width: 100vw;
+        margin-top:2.5px;
+        margin-bottom:2.5px;
+     }
+     .fam-label{
+        margin-left:2vw;
+        font-family: 'Inter';
+        font-size: 24px;
+        font-weight: 300;
+        color:white;
+        margin-bottom:2px;
+     }
+     .fam-val{
+        font-family: 'Inter';
+        font-size: 22px;
+        font-weight: 250;
+        color:white;
+        margin-left:25px;
+        margin-bottom:2px;
+        margin-top:1px;
+        margin-bottom:1px;  
+     }
+}

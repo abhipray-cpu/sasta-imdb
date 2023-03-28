@@ -1,0 +1,12 @@
+body{
+    top:0;
+    left:0;
+    width:100vw;
+    overflow-x: hidden;
+    background: rgba(28, 26, 26, 1);
+    overflow-y: auto;
+}
+
+body::-webkit-scrollbar{
+    display: none;
+}

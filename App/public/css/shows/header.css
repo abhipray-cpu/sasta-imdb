@@ -1,0 +1,95 @@
+@media only screen and (min-width:900px){
+    #header-tit{
+        position: relative;
+        width:60vw;
+        height:60px;
+        margin-top:6px;
+    margin-left:1vw;
+    }
+    #title{
+        line-height: 60px;
+        font-family: 'Inter';
+        font-size:32px;
+        font-weight: 350;
+        color:#ffffff;
+    
+    max-width: 40vw;
+    }
+
+    #season{
+        font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 21px;
+    line-height: 30px;
+    margin-left:0.35vw;
+    margin-top:8px;
+    color: rgba(255, 255, 255, 0.651);
+    
+    }
+    #rating{
+    width:118px;
+    height: 85px;
+    margin-left:1.vw;
+    margin-top:6px;
+    background: #E9C610;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 9px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 30px;
+    
+    color: #FFFFFF;
+    
+    }
+    
+}
+@media only screen and (max-width:480px){
+    #header-tit{
+        position:relative;
+        width:100vw;
+        height:50px;
+        margin-top:5px;
+    margin-left:1.15vw;
+    }
+    #title{
+        line-height: 50px;
+        font-family: 'Inter';
+        font-size:26px;
+        font-weight: 300;
+        color:#ffffff;
+    
+    max-width: 60vw;
+    }
+
+    #season{
+        font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 30px;
+    margin-left:0.35vw;
+    color: rgba(255, 255, 255, 0.651);
+    margin-top:-2px;
+    
+    }
+    #rating{
+    width:118px;
+    height: 85px;
+    margin-left:1vw;
+    margin-top:6px;
+    background: #E9C610;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 9px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 30px;
+    
+    color: #FFFFFF;
+    
+    }
+}

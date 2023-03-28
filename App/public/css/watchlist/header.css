@@ -1,0 +1,212 @@
+@media only screen and (min-width:900px){
+    #watch_header{
+        width:100vw;
+        height: 180px;
+        overflow: hidden;
+    }
+    #row1{
+    width:100vw;
+    height:70px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.72);
+    }
+    #watch_title{
+        float:left;
+    max-width:40vw;
+    margin-left:20px;
+    margin-top:15px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 44px;
+    /* identical to box height */
+    color: #FFFFFF;
+    }
+    #add{
+        float: left;
+        margin-left:40vw;
+        cursor: pointer;
+    }
+    #add img{
+        width:30px;
+        height: 30px;
+        margin-top:20px;
+        float: left;
+    }
+    #add h3{
+        float:left;
+        margin-left:16px;
+        margin-top:20px;
+        font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 29px;
+    /* identical to box height */
+    color: #FFFFFF;
+    }
+    #share{
+        float:left;
+        margin-left:6vw;
+        cursor: pointer;
+    }
+    #share img{
+        width:30px;
+        height: 30px;
+        margin-top:20px;
+        float: left;
+    }
+    #share h3{
+        float:left;
+        margin-left:16px;
+        margin-top:20px;
+        font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 29px;
+    /* identical to box height */
+    color: #FFFFFF;
+    }
+    #mobile_sort{
+        display: none;
+    }
+    #row2{
+        width:100vw;
+        height: 80px;
+        display: grid;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.72);
+        grid-template-columns: 10fr 45fr 45fr;
+    }
+    #titles{
+    max-width:300px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 29px;
+    margin-top:21px;
+    /* identical to box height */
+    color: #FFFFFF;
+    margin-left:20px;
+    }
+    
+    .drop_title{
+        float:left;
+       font-family: 'Inter';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 24px;
+        line-height: 29px;
+        margin-top:25px;
+        color: #FFFFFF;
+    }
+    #sort{
+        margin-left:21vw;
+    }
+    #other{
+        margin-left:10vw;
+    }
+    .dropmenu{
+        height:35px;
+        width:200px;
+        margin-top:23px;
+       margin-left:10px;
+       font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 29px;
+    /* identical to box height */
+    
+    
+    color: #000000;
+    
+    }
+    option{
+        font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 29px;
+    /* identical to box height */
+    
+    
+    color: #000000;
+    
+    }
+    
+    /*need to use js to change the bg color on hover*/
+      
+}
+@media only screen and (max-width:480px){
+    #watch_header{
+        width:100vw;
+        height: 62px;
+        overflow: hidden;
+    }
+    #row1{
+    width:100vw;
+    height:62px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.325);
+    }
+    #watch_title{
+        float:left;
+    /* identical to box height */
+    color: #FFFFFF;
+    max-width: 40vw;
+    height: 40px;
+margin-left: 13px;
+margin-top: 18px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 29px;
+overflow: hidden;
+/* identical to box height */
+color: #FFFFFF;
+    }
+    #mobile_sort{
+        float: left;
+        margin-left:15vw;
+        cursor: pointer;
+    }
+    #mobile_sort img{
+        width:25px;
+        height: 25px;
+        margin-top:20px;
+        float: left;
+    }
+    #add{
+        float: left;
+        margin-left:7vw;
+        cursor: pointer;
+    }
+    #add img{
+        width:25px;
+        height: 25px;
+        margin-top:20px;
+        float: left;
+    }
+    #add h3{
+        display: none;
+    }
+    #share{
+        float:left;
+        margin-left:7vw;
+        cursor: pointer;
+    }
+    #share img{
+        width:25px;
+        height: 25px;
+        margin-top:20px;
+        float: left;
+    }
+    #share h3{
+        display: none;
+    }
+    #row2{
+        display: none;
+    }
+}

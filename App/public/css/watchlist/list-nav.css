@@ -1,0 +1,42 @@
+@media only screen and (min-width:900px) {
+    #nav-list-cont{
+        display: none;
+    }
+}
+@media only screen and (max-width:480px){
+    #nav-list-cont{
+        width:100vw;
+        height: 57px;
+        position: fixed;
+        bottom: 0;
+        left:0;
+        background:rgba(76, 72, 72, 1);
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius:10px;
+        padding-left:5vw;
+        padding-right:5vw;
+        overflow: scroll;
+        display: grid;
+        grid-template-columns: repeat(10,auto);
+    }
+    #nav-list-cont::-wsebkit-scrollbar{
+        display: none;
+    }
+    .it{
+        height:50px;
+        line-height: 50px;
+        font-size:18px;
+        font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+margin-left:5px;
+margin-right:10px;
+/* identical to box height */
+
+
+color:white;
+    }
+    .it:hover{
+        color:#D8B814;
+    }
+}
