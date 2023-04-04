@@ -13,7 +13,8 @@ const isAuth = (req, res, next) => {
 router.get('/home',controller.home)
 router.get('/results',controller.results)
 router.get('/search-menu',controller.searchMenu)
-router.get('/shows',controller.shows)
-router.get('/movies',controller.movies)
+router.get('/show/:showName',controller.shows)
+router.get('/movie/:movName',controller.movies)
 router.get('/actor',controller.actors)
+router.get('/epDetails/:title/:air/:description/*',controller.epDetails)
 module.exports = router

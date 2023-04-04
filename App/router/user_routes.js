@@ -5,6 +5,7 @@ const controller = require('../controller/user')
 const user = require('../model/user')
 const isAuth = require('./isAuth')
 const {check,body} = require('express-validator')
+const { Container } = require('winston')
 router.get('/', controller.landingPage)
 router.get('/login', controller.login)
 router.post('/login', [
@@ -94,4 +95,6 @@ router.post('/confirmChange', [
 router.get('/watchlist',isAuth,controller.watchList)
 router.get('/user',isAuth,controller.user)
 router.get('/suggestions',isAuth,controller.suggestions)
+router.get('/upvote/:item/:type',isAuth,controller.upvote)
+router.get('/watchlist/:item/:type',isAuth,controller.addWatch)
 module.exports = router

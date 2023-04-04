@@ -21,42 +21,46 @@
         </form>
     </div>
     <div id="reviews">
-        <h2>Reviews</h2>
-        <div id="revs">
-            <div class="review">
-                <h3>Username <span class="user-rate">4.1</span></h3>
-                <p>This will contain the content of the review</p>
-            </div>
-            <div class="review">
-                <h3>Username <span class="user-rate">4.1</span></h3>
-                <p>This will contain the content of the review</p>
-            </div>
-            <div class="review">
-                <h3>Username <span class="user-rate">4.1</span></h3>
-                <p>This will contain the content of the review</p>
-            </div>
-            <div class="review">
-                <h3>Username <span class="user-rate">4.1</span></h3>
-                <p>This will contain the content of the review</p>
-            </div>
-            <div class="review">
-                <h3>Username <span class="user-rate">4.1</span></h3>
-                <p>This will contain the content of the review</p>
-            </div>
-            <div class="review">
-                <h3>Username <span class="user-rate">4.1</span></h3>
-                <p>This will contain the content of the review</p>
-            </div>
-            <div class="review">
-                <h3>Username <span class="user-rate">4.1</span></h3>
-                <p>This will contain the content of the review</p>
-            </div>
-            <div class="review">
-                <h3>Username <span class="user-rate">4.1</span></h3>
-                <p>This will contain the content of the review</p>
-            </div>
-
-            <h4 id="all">See all reviews..</h4>
-        </div>
+        <h2 style="text-align:center;font-size:32px;font-weight: 450;">Reviews</h2>
+        <% if(reviews.length == 0) { %>
+            <h3 style="text-align:center;font-size:32px;font-weight: 450;">No reviews found!!</h3>
+            <% } else { %>
+                <div id="revs">
+                    <div class="review">
+                        <h3>Username <span class="user-rate">4.1</span></h3>
+                        <p>This will contain the content of the review</p>
+                    </div>
+                    <div class="review">
+                        <h3>Username <span class="user-rate">4.1</span></h3>
+                        <p>This will contain the content of the review</p>
+                    </div>
+                    <div class="review">
+                        <h3>Username <span class="user-rate">4.1</span></h3>
+                        <p>This will contain the content of the review</p>
+                    </div>
+                    <div class="review">
+                        <h3>Username <span class="user-rate">4.1</span></h3>
+                        <p>This will contain the content of the review</p>
+                    </div>
+                    <div class="review">
+                        <h3>Username <span class="user-rate">4.1</span></h3>
+                        <p>This will contain the content of the review</p>
+                    </div>
+                    <div class="review">
+                        <h3>Username <span class="user-rate">4.1</span></h3>
+                        <p>This will contain the content of the review</p>
+                    </div>
+                    <div class="review">
+                        <h3>Username <span class="user-rate">4.1</span></h3>
+                        <p>This will contain the content of the review</p>
+                    </div>
+                    <div class="review">
+                        <h3>Username <span class="user-rate">4.1</span></h3>
+                        <p>This will contain the content of the review</p>
+                    </div>
+        
+                    <h4 id="all">See all reviews..</h4>
+                </div>
+        <% } %>
     </div>
 </div>

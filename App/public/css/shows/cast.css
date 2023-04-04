@@ -43,7 +43,7 @@
         font-family: 'Inter';
         font-style: normal;
         font-weight: 700;
-        font-size: 24px;
+        font-size: 21px;
         text-align: center;
         overflow: hidden;
         /* identical to box height */
@@ -60,7 +60,8 @@
     font-style: normal;
     font-weight: 500;
     overflow: hidden;
-    font-size: 21px;
+    font-size: 20px;
+margin-top:-10px;
     color: rgba(255, 255, 255, 0.7);
     }
     .eps{
@@ -71,7 +72,8 @@
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
-    font-size: 21px;
+    font-size: 16px;
+    margin-top:-8px;
     color: rgba(255, 255, 255, 0.45);
     overflow: hidden;
     }
@@ -107,7 +109,7 @@
     }
     .ep-item{
         width:200px;
-        height:270px;
+        height:300px;
     }
     .ep-item img{
         width: 150px;
@@ -145,7 +147,7 @@
     .eps{
     width: 200px;
     height: fit-content;
-    max-height: 30px;
+    max-height: 50px;
     text-align: center;
     font-family: 'Inter';
     font-style: normal;

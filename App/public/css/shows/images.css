@@ -1,13 +1,13 @@
 @media only screen and (min-width:900px){
     #img-contain{
         width:100vw;
-        margin-top:10px;
+        margin-top:-84px;
         height:250px;   
        }
        .header{
        width: 150px;
        height: 51px;
-       margin-left:4vw;
+       margin-left:1.2vw;
        margin-top:5px;
        font-family: 'Inter';
        font-style: normal;
@@ -18,8 +18,8 @@
        }
        #img-container{
            width:100vw;
-           display: grid;
-           grid-template-columns:repeat(8,240px);
+           display:flex;
+           flex-direction: row;
            overflow-y:hidden ;
            overflow-x: auto;
        }
@@ -58,8 +58,8 @@
        }
        #img-container{
            width:100vw;
-           display: grid;
-           grid-template-columns:repeat(8,240px);
+           display:flex;
+           flex-direction: row;
            overflow-y:hidden ;
            overflow-x: auto;
        }

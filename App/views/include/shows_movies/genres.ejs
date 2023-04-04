@@ -1,12 +1,8 @@
 <div id="genre-container">
     <div id="genres">
-        <div class="genre">Comedy</div>
-        <div class="genre">Action</div>
-        <div class="genre">Thriller</div>
-        <div class="genre">Documentary</div>
-        <div class="genre">Horro</div>
-        <div class="genre">SCIFI</div>
-        <div class="genre">Zombie</div>
+       <% category.forEach(catg=>{ %>
+        <div class="genre"><%= catg %></div>
+        <% }) %>
     </div>
     <div id="buttons">
         <div class="button">+Watchlist</div>

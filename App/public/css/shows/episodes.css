@@ -57,9 +57,10 @@
         max-height:60px;
         font-family: 'Inter';
     font-style: normal;
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 39px;
+    font-weight: 400;
+    font-size: 21px;
+    margin-top:8px;
+    line-height: 21px;
     /* identical to box height */
     
     
@@ -125,9 +126,10 @@
         max-height:60px;
         font-family: 'Inter';
     font-style: normal;
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 39px;
+    font-weight: 400;
+    font-size: 20px;
+    margin-top:6px;
+    line-height:21px;
     /* identical to box height */
     
     

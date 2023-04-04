@@ -9,14 +9,13 @@ const crypto = require('crypto');
 const mongoose = require('mongoose');
 const User = require('../model/user')
 const bcrypt = require('bcrypt')
-const nodeMailer = require('nodeMailer')
+const nodeMailer = require('nodemailer')
 const logger = require('../logs/logger')
-const nodemailer = require('nodemailer')
 require('dotenv').config();
 const { validationResult } = require('express-validator')
 const Movie = require('../model/movies')
 const Show =  require('../model/shows')
-let transporter = nodemailer.createTransport({
+let transporter = nodeMailer.createTransport({
     service: 'gmail',
     auth: {
         user: process.env.USER_EMAIL,
@@ -612,4 +611,12 @@ exports.user = (req,res,next)=>{
 
 exports.suggestions = (req,res,next)=>{
     res.render('suggestion.ejs')
+}
+
+exports.upvote = async(req,res,next)=>{
+
+}
+
+exports.addWatch = async(req,res,next)=>{
+    
 }

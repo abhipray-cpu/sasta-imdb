@@ -25,6 +25,9 @@ const showSchema = new Schema({
   likeCount:{
     type:Number
   },
+  episodes:{
+    type:Object
+  },
   moviesListCount:{
     type:Number
   },
