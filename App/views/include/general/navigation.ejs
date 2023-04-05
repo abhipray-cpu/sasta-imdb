@@ -18,12 +18,19 @@
 </div>
 <div id="user">
     <img src="/images/nav-user.png" alt="user">
-    <h3>User</h3>
+    <% if(validated){ %>
+        <h3> <a href="/user" style="text-decoration: none;color:inherit;font-size:inherit;font-weight:inherit;font-family:inherit">User</a> </h3>
+        <% } else { %>
+            <h3> <a href="/login" style="text-decoration: none;color:inherit;font-size:inherit;font-weight:inherit;font-family:inherit">Signin</a> </h3>
+            <% } %>
+    
 </div>
 </div>
     <div id="mobile">
         <div id="header">
-            <img src="/images/home_logo_mobile.png" alt="home-log">
+            <a href="/" style="text-decoration: none;">
+                <img src="/images/home_logo_mobile.png" alt="home-log">
+            </a>
             <div id="search">
                 <form action="#" method="POST">
                     <input type="text" name="search-box" id="search-box" placeholder="Search..">
@@ -32,9 +39,13 @@
             </div> 
         </div>
         <div id="links">
-            <a href="#" class="jump_links" id="link1">Watchlist</a>
-            <a href="#" class="jump_links" id="link2">User</a>
-            <a href="#" class="jump_links" id="link3">Trending</a>
+            <a href="/" class="jump_links" id="link1">Watchlist</a>
+            <% if(validated){ %>
+                 <a href="/user" class="jump_links" id="link2">User</a> 
+                <% } else { %>
+                    <a href="/login" class="jump_links" id="link2">Signin</a>
+                    <% } %>
+            <a href="/trending" class="jump_links" id="link3">Trending</a>
         </div>
     </div>
    

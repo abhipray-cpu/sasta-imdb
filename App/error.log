@@ -17,3 +17,4 @@
 {"level":"error","message":"failed to vaidate user Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client","service":"user-service"}
 {"level":"error","message":"failed to vaidate user Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client","service":"user-service"}
 {"level":"error","message":{},"service":"user-service"}
+{"level":"error","message":{},"service":"user-service"}

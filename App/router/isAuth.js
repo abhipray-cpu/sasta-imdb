@@ -1,5 +1,5 @@
 module.exports = (req, res, next) => {
-    if (req.session.isLoggedIn === true)
+    if (req.session.isloggedIn === true)
         return next();
     else
         return res.render('login.ejs', {

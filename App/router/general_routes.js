@@ -17,4 +17,5 @@ router.get('/show/:showName',controller.shows)
 router.get('/movie/:movName',controller.movies)
 router.get('/actor',controller.actors)
 router.get('/epDetails/:title/:air/:description/*',controller.epDetails)
+router.get('/trending',controller.trending);
 module.exports = router

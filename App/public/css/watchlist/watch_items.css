@@ -29,7 +29,9 @@
     font-weight: 400;
     font-size: 32px;
     line-height: 39px;
-    max-width:40vw;
+    height: 40px;
+    max-width:33.5vw;
+    overflow: hidden;
     /* identical to box height */
     
     
@@ -75,7 +77,8 @@ line-height: 22px;
 color: #9C9999;
 margin-top:7px;
 max-width:42vw;
-max-height:250px;
+max-height:190px;
+overflow: hidden;
 }
 .mob-upvote{
     display:none;
@@ -219,7 +222,7 @@ max-width:60vw;
     color: rgba(255, 255, 255, 0.64);
 max-width:60vw;
 margin-left:8px;
-max-height:100px;
+max-height:94px;
 overflow: hidden;
 }
 .button,

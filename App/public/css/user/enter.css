@@ -77,11 +77,12 @@
         border-bottom: 1px solid rgba(255, 255, 255, 0.523);
    }
    .user-item img{ 
-         width:60px;
-         height: 60px;
+         width:40px;
+         height: 40px;
          float: left;
          margin-left:20px;
          margin-bottom:20px;
+         margin-top:20px;
    }
    .user-item h3{
     float:left;

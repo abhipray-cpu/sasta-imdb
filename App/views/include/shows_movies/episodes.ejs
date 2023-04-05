@@ -4,8 +4,7 @@
         <h2 class="row-title">Season <%= season %></h2>
     <div class="ep-row">
         <% episodes[season].forEach(episode=>{ %>
-            <a href="#" style="text-decoration:none;color:black">
-               <a href="/epDetails/<%= episode.title %>/<%= episode.airDate %>/<%= episode.description %>/<%= episode.image %>" style="text-decoration: none;">
+            <a href="/epDetails/<%= episode.title %>/<%= episode.airDate %>/<%= episode.description %>/<%= episode.image %>" style="text-decoration: none;">
                 <div class="episode">
                     <% if(episode.image == '') {%>
                         <img src="https://imgs.search.brave.com/yEi0Pnxud7y5i8QiOzfY-FrB6837P53Ne5KWpfC529c/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvcHJl/dmlld3MvMDAwLzM5/OS81ODgvb3JpZ2lu/YWwvcmVkLWNvbWlu/Zy1zb29uLW5lb24t/aWNvbi12ZWN0b3Iu/anBn" alt="no data">
@@ -15,7 +14,6 @@
                     
                     <h4><%= episode.title %></h4>
                 </div></a>
-            </a>
             <% }) %>
     </div>
         <%  }) %>

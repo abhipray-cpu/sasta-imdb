@@ -14,7 +14,9 @@ const logger = require('../logs/logger')
 require('dotenv').config();
 const { validationResult } = require('express-validator')
 const Movie = require('../model/movies')
-const Show =  require('../model/shows')
+const Show =  require('../model/shows');
+const Watchlist = require('../model/watchList')
+const { movies } = require('./general');
 let transporter = nodeMailer.createTransport({
     service: 'gmail',
     auth: {
@@ -27,15 +29,10 @@ let transporter = nodeMailer.createTransport({
 })
 
 exports.landingPage = async(req,res,next)=>{
-    if (req.session.isloggedIn === true) {
-
-        res.redirect(`/user/${req.session.userId}`)
-    }
-    else{
         // things required for landing page
         // top 7 trending movies and 7 trending shows
-        const trend_movies = await Movie.find({}).sort({'rank':1}).limit(7).select({images:1,description:1,title:1,ratings:1})
-        const trend_shows = await Show.find({}).sort({'rank':1}).limit(7).select({images:1,title:1,description:1,ratings:1})
+        const trend_movies = await Movie.find({}).sort({'viewCount':1,'rating':1}).limit(7).select({images:1,description:1,title:1,ratings:1})
+        const trend_shows = await Show.find({}).sort({'viewCount':1,'rating':1}).limit(7).select({images:1,title:1,description:1,ratings:1})
         //there will be 13 different rows and of different categories we will fetch 5 items from movies ans shows each
          let suggestions = trend_movies
          let trending = {'movies':trend_movies,'shows':trend_shows}
@@ -67,6 +64,7 @@ exports.landingPage = async(req,res,next)=>{
         res.render('landing-page.ejs',{
             suggestions:suggestions,
             trending:trending,
+            validated:req.session.isloggedIn,
             // before deploy add oscar as well
             items:{
                 Adventure:{'movie':action_movie,'show':action_show},
@@ -82,12 +80,12 @@ exports.landingPage = async(req,res,next)=>{
             }    
         })
     }
-}
+
 exports.login = (req, res, next) => {
 
     if (req.session.isloggedIn === true) {
 
-        res.redirect(`/user/${req.session.userId}`)
+        res.redirect(`/`)
     } else {
 
         res.render('login.ejs', {
@@ -131,7 +129,7 @@ exports.login_check = (req, res, next) => {
 
                             req.session.isloggedIn = true
                             req.session.userId = user_id
-                            res.redirect(`/user/${user_id}`)
+                            res.redirect('/')
                         } else {
                             //in this case the passwoed does not so we will flash this info
                             req.flash('errorpswd', 'The password you entere is wrong so fuck off!!') //this method is now available in our app
@@ -601,22 +599,142 @@ exports.remindPassword = async(req, res, next) => {
     }
 }
 exports.watchList = (req,res,next)=>{
-    res.render('watchlist.ejs')
+    res.render('watchlist.ejs',{
+        validated:req.session.isloggedIn,
+    })
 }
 
 exports.user = (req,res,next)=>{
 
-    res.render('user.ejs')
+    res.render('user.ejs',{
+        validated:req.session.isloggedIn,
+    })
 }
 
 exports.suggestions = (req,res,next)=>{
-    res.render('suggestion.ejs')
+    res.render('suggestion.ejs',{
+        validated:req.session.isloggedIn,
+    })
 }
 
 exports.upvote = async(req,res,next)=>{
-
+let item = req.params.item;
+let type = req.params.type;
+// increase upvote of movie;
+if(type == 'movie'){
+    try{
+        let result = await Movie.updateOne({_id:item},{$inc:{'likeCount':1}})
+        console.log(result)
+    }
+    catch(err){
+        console.log(err)
+    }
+}
+else{
+    try{
+        let result = await Show.updateOne({_id:item},{$inc:{'likeCount':1}})
+        console.log(result)
+    }
+    catch(err){
+        console.log(err)
+    }
+}
+res.status(204).send();
 }
 
 exports.addWatch = async(req,res,next)=>{
-    
+    let item = req.params.item;
+    let type = req.params.type;
+    let user = req.session.userId;
+     if(type === 'movie'){
+    try{
+        let result = await Watchlist.find({user:user})
+        // add to the doc
+        if(result.length>0){
+           let watch = result[0]
+           let movies = watch.movies;
+           let increase=0;
+           if(movies.indexOf(item)==-1)
+           {
+            movies.push(item)
+            increase=1;
+           }
+           try{
+            let mov_update = await Watchlist.updateOne({user:user},{$set:{'movies':movies},$inc:{'movieCount':increase}})
+            console.log(mov_update)
+           }
+           catch(err){
+            console.log(err)
+           }
+        }
+        // creat doc
+        else{
+      let newWatch =  new Watchlist({
+        user:user,
+        movieCount:1,
+        showsCount:0,
+        movies:[item],
+        show:[]
+      })
+      await newWatch.save();
+        }
+    }
+    catch(err){
+        console.log(err);
+        return;
+    }
+    //increase the watchlist count of the movie
+    try{
+        await Movie.updateOne({_id:item},{$inc:{'movieListCount':1}})
+    }
+    catch(err){
+        console.log(err)
+    }
+      } 
+      
+      else{
+        try{
+            let result = await Watchlist.find({user:user})
+            // add to the doc
+            if(result){
+               let watch = result[0]
+               let shows = watch.shows;
+               let increase = 0;
+               if(shows.indexOf(item)==-1)
+               {
+                shows.push(item)
+                increase=1;
+               }
+               try{
+                await Watchlist.updateOne({user:user},{$set:{'shows':shows},$inc:{'showsCount':increase}})
+               }
+               catch(err){
+                console.log(err)
+               }
+            }
+            // creat doc
+            else{
+          let newWatch =  new Watchlist({
+            user:user,
+            movieCount:0,
+            showsCount:1,
+            movies:[],
+            show:[item]
+          })
+          await newWatch.save();
+            }
+        }
+        catch(err){
+            console.log(err)
+            return;
+        }
+        //increase the watchlist count of the movie
+        try{
+            await Show.updateOne({_id:item},{$inc:{'movieListCount':1}})
+        }
+        catch(err){
+            console.log(err)
+        }
+      }
+      res.status(204).send();
 }

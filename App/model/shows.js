@@ -28,7 +28,7 @@ const showSchema = new Schema({
   episodes:{
     type:Object
   },
-  moviesListCount:{
+  movieListCount:{
     type:Number
   },
   viewCount:{
