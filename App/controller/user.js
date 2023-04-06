@@ -17,6 +17,7 @@ const Movie = require('../model/movies')
 const Show =  require('../model/shows');
 const Watchlist = require('../model/watchList')
 const { movies } = require('./general');
+const { warn } = require('console');
 let transporter = nodeMailer.createTransport({
     service: 'gmail',
     auth: {
@@ -281,7 +282,7 @@ exports.signup_check = (req, res, next) => {
 exports.logout = (req, res, next) => {
     //for logging out we simply delte a session
     req.session.destroy(err => {
-        loggger.log({level:'error',message:err});
+        console.log({level:'error',message:err});
         res.redirect('/')
     });
 }
@@ -598,10 +599,41 @@ exports.remindPassword = async(req, res, next) => {
         })
     }
 }
-exports.watchList = (req,res,next)=>{
+exports.watchList = async (req,res,next)=>{
+
+    /*this is the coding for the sort
+    0=>none
+    1=>latest
+    2=>oldest
+    3=>most popular 
+    4=>least popular
+    */
+   let sort = req.params.sort;
+   let watch;
+   if(sort == '0')
+    watch = await Watchlist.find({user:req.session.userId}).populate('movies').sort({'viewCount':1}).populate('shows');
+   if(sort == '1') 
+    watch = await Watchlist.find({user:req.session.userId}).populate({path:'movies',options:{sort:{'viewCount':1}}}).populate({path:'shows',options:{sort:{'viewCount':1}}});
+   if(sort == '2') 
+    watch = await Watchlist.find({user:req.session.userId}).populate({path:'movies',options:{sort:{'viewCount':1}}}).populate({path:'shows',options:{sort:{'viewCount':-1}}});
+   if(sort == '3')  
+    watch = await Watchlist.find({user:req.session.userId}).populate({path:'movies',options:{sort:{'viewCount':1}}}).populate({path:'shows',options:{sort:{'created_at':1}}});
+   if(sort == '4')
+    watch = await Watchlist.find({user:req.session.userId}).populate({path:'movies',options:{sort:{'viewCount':1}}}).populate({path:'shows',options:{sort:{'created_at':-1}}});
+   if(watch.length>0){
     res.render('watchlist.ejs',{
+        data:watch[0],
         validated:req.session.isloggedIn,
+        empty:false
     })
+   }
+    else{
+        res.render('watchlist.ejs',{
+            data:[],
+            validated:req.session.isloggedIn,
+            empty:true
+        })
+    }
 }
 
 exports.user = (req,res,next)=>{

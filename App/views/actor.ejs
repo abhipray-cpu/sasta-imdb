@@ -21,7 +21,10 @@
 </head>
 <body>
     <%- include('include/general/navigation.ejs')%>
-    <%- include('include/actor/info.ejs') %>
+    <% if(record == false){ %>
+        <h2>No data found for this actor</h2>
+        <% }else { %>
+            <%- include('include/actor/info.ejs') %>
     <h2 class="main-lab">About</h2>
     <%- include('include/shows_movies/description.ejs') %>
     <%- include('include/actor/family.ejs')%>
@@ -31,6 +34,7 @@
     <%- include('include/actor/work.ejs') %>
     <h2 class="main-lab" style="margin-top:15px;">Trivia</h2>
     <%- include('include/actor/trivia.ejs') %>
+            <% } %>
         
 </body>
 </html>

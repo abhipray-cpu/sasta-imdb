@@ -8,13 +8,15 @@
     <form action="#" method="POST">
         <input type="text" name="search-box" id="search-box" placeholder="Search..">
      </form>   
-     <button type="submit" id="search-button">
+     <button type = 'submit' id="search-button">
         Search
     </button>  
 </div> 
 <div id="watchlist">
     <img src="/images/watchlist-large.png" alt="watchlist">
-    <h3>Watchlist</h3>
+    <a href="/watchlist/0" style="text-decoration: none;color:inherit">
+        <h3>Watchlist</h3>
+    </a>
 </div>
 <div id="user">
     <img src="/images/nav-user.png" alt="user">
@@ -39,7 +41,7 @@
             </div> 
         </div>
         <div id="links">
-            <a href="/" class="jump_links" id="link1">Watchlist</a>
+            <a href="/watchlist/0" class="jump_links" id="link1">Watchlist</a>
             <% if(validated){ %>
                  <a href="/user" class="jump_links" id="link2">User</a> 
                 <% } else { %>

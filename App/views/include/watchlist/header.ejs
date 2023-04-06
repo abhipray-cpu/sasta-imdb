@@ -14,14 +14,15 @@
         </div>
     </div>
     <div id="row2">
-        <div id="titles">69 Titles</div>
+        <div id="titles"><%= data.movieCount + data.showsCount %> Titles</div>
         <div id="sort" class="dropdown">
             <div class="drop_title">SortBy:</div>
-            <select name="sort_menu" id="sort_menu" class="dropmenu">
-                <option value="latest">Latest</option>
-                <option value="oldest">Oldest</option>
-                <option value="most_popular">Most Popular</option>
-                <option value="least_popular">Least Popular</option>
+            <select name="sort_menu" id="sort_menu" class="dropmenu" onchange="javascript:handleSelect(this)">
+                <option value="/watchlist/0" text="latest">None</option>
+                <option value="/watchlist/1" text="latest">Latest</option>
+                <option value="/watchlist/2" text="oldest">Oldest</option>
+                <option value="/watchlist/3" text="most_popular">Most Popular</option>
+                <option value="/watchlist/4" text="least_popular">Least Popular</option>
             </select>
         </div>
         <div id="other" class="dropdown">
@@ -35,3 +36,9 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    function handleSelect(elm)
+    {
+       window.location = elm.value;
+    }
+  </script>

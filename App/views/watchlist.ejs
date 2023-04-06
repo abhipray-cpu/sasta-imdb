@@ -19,7 +19,11 @@
 <body>
     <%- include('include/general/navigation.ejs')%>
     <%- include('include/watchlist/header.ejs')%>
+    <% if(empty){ %>
+        <h3>Ypur playlist is empty</h3>
+        <% } else { %>
     <%- include('include/watchlist/watch_items.ejs')%>
+    <% } %>
     <%- include('include/watchlist/new_watchlist.ejs')%>
     <%- include('include/watchlist/list-nav.ejs')%>
 </body>

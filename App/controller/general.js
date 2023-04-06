@@ -2,7 +2,7 @@ const movies =  require('../model/movies')
 const shows =  require('../model/shows')
 const watchList = require('../model/user')
 const oscar =  require('../model/oscar')
-const actor =  require('../model/actors')
+const Actor =  require('../model/actors')
 const mov_review = require('../model/reviews_movie')
 const show_review = require('../model/reviews_show')
 exports.home = (req,res,next)=>{
@@ -117,10 +117,31 @@ req.session.episodes = {'season':seasons,'episodes':item.episodes}
     }
 }
 
-exports.actors = (req,res,next)=>{
-    res.render('actor.ejs',{
+exports.actors = async(req,res,next)=>{
+    let actor_name = req.params.name;
+    let actor = await Actor.find({name:actor_name})
+    if(actor){
+         //finding all the movies and shows of the actor
+    let actor_movies = await movies.find({'casts.actor_name':{$in:[actor_name]}})
+    let actor_shows = await shows.find({'casts.actor_name':{$in:[actor_name]}})
+       res.render('actor.ejs',{
         validated:req.session.isloggedIn,
+        record:true,
+        actor:actor,
+        actor_movies:actor_movies,
+        actor_shows:actor_shows
     })
+    }
+    else{
+          res.render('actor.ejs',{
+        validated:req.session.isloggedIn,
+        record:false,
+        actor:'',
+        actor_movies:[],
+        actor_shows:[]
+    })
+    }
+  
 }
 exports.epDetails = (req,res,next)=>{
    let season = req.session.episodes.season;

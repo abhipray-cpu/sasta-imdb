@@ -17,9 +17,12 @@
             <div class="cast"><%= movie.casts[0].actor_name %>,<%= movie.casts[1].actor_name %>,<%= movie.casts[2].actor_name %>,<%= movie.casts[3].actor_name %>......</div>
             <div class="description"><%= movie.description %></div>
            <div class="mob-upvote">Votes:<strong class="val"><%= movie.likeCount %></strong></div>
-           <div class="mob-button">
-            <a href="" style="text-decoration: none;color:inherit">+Watchlist</a>
-        </div>
+           <a href="/watchlist/<%= movie._id %>/movie" style="text-decoration: none;color:inherit">
+            <div class="mob-button">
+                +Watchlist
+            </div>
+        </a>
+           
         </div>
         <div class="buttons">
             <div class="votes">Votes:<strong style="color:#D8B814;"><%= movie.likeCount%></strong></div>
@@ -54,7 +57,11 @@
                 <div class="cast"><%= show.casts[0].actor_name %>......</div>
                 <div class="description"><%= show.description %></div>
                <div class="mob-upvote">Votes:<strong class="val"><%= show.likeCount %></strong></div>
-               <div class="mob-button">+Watchlist</div>
+               <a href="/watchlist/<%= show._id %>/show" style="text-decoration: none;color:inherit">
+                <div class="mob-button">
+                    +Watchlist
+                </div>
+            </a>
             </div>
             <div class="buttons">
                 <div class="votes">Votes:<strong style="color:#D8B814;"><%= show.likeCount%></strong></div>

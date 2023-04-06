@@ -92,7 +92,7 @@ router.post('/confirmChange', [
     ],
     controller.confirmChange1)
     router.post('/remindPassword', controller.remindPassword)
-router.get('/watchlist',isAuth,controller.watchList)
+router.get('/watchlist/:sort',isAuth,controller.watchList)
 router.get('/user',isAuth,controller.user)
 router.get('/suggestions',isAuth,controller.suggestions)
 router.get('/upvote/:item/:type',isAuth,controller.upvote)

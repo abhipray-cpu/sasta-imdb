@@ -2,15 +2,17 @@
     <h2 id="cast-header">Cast</h2>
     <div id="ep-items">
       <% casts.forEach(cast=>{ %>
-        <div class="ep-item">
-          <% if(cast.image == '') {%>
-            <img src="https://imgs.search.brave.com/nRcYZiM3fzEBsYg8UplCApvFVgn3gm4ejAghRxvXXqc/rs:fit:800:1000:1/g:ce/aHR0cHM6Ly9pbWFn/ZXMtd2l4bXAtZWQz/MGE4NmI4YzRjYTg4/Nzc3MzU5NGMyLndp/eG1wLmNvbS9mL2Nh/YzhlNzEwLWVmODEt/NDAzNS04NjFiLWRm/MDM1ZGE1MGZlNC9k/YjJ3NXY4LTY2OTVl/Y2Y1LTQ1MzEtNDIz/ZS1iZjdkLWExMmFl/MzEzMWI2YS5qcGcv/djEvZmlsbC93Xzgw/MCxoXzEwMDAscV83/MCxzdHJwL25vX2Zh/Y2VfYnlfc29pc29u/X2RiMnc1djgtcHJl/LmpwZz90b2tlbj1l/eUowZVhBaU9pSktW/MVFpTENKaGJHY2lP/aUpJVXpJMU5pSjku/ZXlKemRXSWlPaUox/Y200NllYQndPamRs/TUdReE9EZzVPREl5/TmpRek56TmhOV1l3/WkRReE5XVmhNR1F5/Tm1Vd0lpd2lhWE56/SWpvaWRYSnVPbUZ3/Y0RvM1pUQmtNVGc0/T1RneU1qWTBNemN6/WVRWbU1HUTBNVFZs/WVRCa01qWmxNQ0lz/SW05aWFpSTZXMXQ3/SW1obGFXZG9kQ0k2/SWp3OU16WXdNQ0lz/SW5CaGRHZ2lPaUpj/TDJaY0wyTmhZemhs/TnpFd0xXVm1PREV0/TkRBek5TMDROakZp/TFdSbU1ETTFaR0Ux/TUdabE5Gd3ZaR0l5/ZHpWMk9DMDJOamsx/WldObU5TMDBOVE14/TFRReU0yVXRZbVkz/WkMxaE1USmhaVE14/TXpGaU5tRXVhbkJu/SWl3aWQybGtkR2dp/T2lJOFBUSTRPREFp/ZlYxZExDSmhkV1Fp/T2xzaWRYSnVPbk5s/Y25acFkyVTZhVzFo/WjJVdWIzQmxjbUYw/YVc5dWN5SmRmUS5O/YXFDUFYtR0tad3Q0/bmV0UkFMMFRxYm9Y/TTlpc3pHeHRzOUNn/cFB3MkFz" alt="no image">
-        <% } else { %>
-            <img src="<%= cast.image %>" alt="<%= cast.character_name %>">
-            <% } %>
-            <h3 class="name"><%= cast.actor_name  %></h3>
-            <h3 class="character"><%= cast.character_name %></h3>
-           </div>
+        <a href="/actor/<%= cast.actor_name  %>" style="text-decoration: none;color:inherit">
+          <div class="ep-item">
+            <% if(cast.image == '') {%>
+              <img src="https://imgs.search.brave.com/nRcYZiM3fzEBsYg8UplCApvFVgn3gm4ejAghRxvXXqc/rs:fit:800:1000:1/g:ce/aHR0cHM6Ly9pbWFn/ZXMtd2l4bXAtZWQz/MGE4NmI4YzRjYTg4/Nzc3MzU5NGMyLndp/eG1wLmNvbS9mL2Nh/YzhlNzEwLWVmODEt/NDAzNS04NjFiLWRm/MDM1ZGE1MGZlNC9k/YjJ3NXY4LTY2OTVl/Y2Y1LTQ1MzEtNDIz/ZS1iZjdkLWExMmFl/MzEzMWI2YS5qcGcv/djEvZmlsbC93Xzgw/MCxoXzEwMDAscV83/MCxzdHJwL25vX2Zh/Y2VfYnlfc29pc29u/X2RiMnc1djgtcHJl/LmpwZz90b2tlbj1l/eUowZVhBaU9pSktW/MVFpTENKaGJHY2lP/aUpJVXpJMU5pSjku/ZXlKemRXSWlPaUox/Y200NllYQndPamRs/TUdReE9EZzVPREl5/TmpRek56TmhOV1l3/WkRReE5XVmhNR1F5/Tm1Vd0lpd2lhWE56/SWpvaWRYSnVPbUZ3/Y0RvM1pUQmtNVGc0/T1RneU1qWTBNemN6/WVRWbU1HUTBNVFZs/WVRCa01qWmxNQ0lz/SW05aWFpSTZXMXQ3/SW1obGFXZG9kQ0k2/SWp3OU16WXdNQ0lz/SW5CaGRHZ2lPaUpj/TDJaY0wyTmhZemhs/TnpFd0xXVm1PREV0/TkRBek5TMDROakZp/TFdSbU1ETTFaR0Ux/TUdabE5Gd3ZaR0l5/ZHpWMk9DMDJOamsx/WldObU5TMDBOVE14/TFRReU0yVXRZbVkz/WkMxaE1USmhaVE14/TXpGaU5tRXVhbkJu/SWl3aWQybGtkR2dp/T2lJOFBUSTRPREFp/ZlYxZExDSmhkV1Fp/T2xzaWRYSnVPbk5s/Y25acFkyVTZhVzFo/WjJVdWIzQmxjbUYw/YVc5dWN5SmRmUS5O/YXFDUFYtR0tad3Q0/bmV0UkFMMFRxYm9Y/TTlpc3pHeHRzOUNn/cFB3MkFz" alt="no image">
+          <% } else { %>
+              <img src="<%= cast.image %>" alt="<%= cast.character_name %>">
+              <% } %>
+              <h3 class="name"><%= cast.actor_name  %></h3>
+              <h3 class="character"><%= cast.character_name %></h3>
+             </div>
+        </a>
         <% }) %>
         
     </div>
