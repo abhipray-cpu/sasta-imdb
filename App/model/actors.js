@@ -8,16 +8,8 @@ const actorsSchema = new Schema({
         require:true,
         
     },
-    physical:{
-        born:{
-            type:String
-        },
-        birthName:{
-            type:String
-        },
-        nickName:{
-            type:String
-        }
+    phy_attributes:{
+       
     },
     bio:{
         type:String,

@@ -1,13 +1,13 @@
 <div id="info-container">
     <div id="actor-details">
         <div id="image">
-            <img src="https://imgs.search.brave.com/L5ZFcQLzExh9kTTO-EHauJBViXJ_HKNOT_ka7zjGGuo/rs:fit:800:450:1/g:ce/aHR0cHM6Ly9zdGF0/aWMud2lraWEubm9j/b29raWUubmV0L2U0/MjNiMTM4LTZiYWIt/NDA1YS04ZDU5LTY0/NDQxNWFkZTI3Ni9z/Y2FsZS10by13aWR0/aC1kb3duLzgwMA" alt="">
+            <img src="https://imgs.search.brave.com/L5ZFcQLzExh9kTTO-EHauJBViXJ_HKNOT_ka7zjGGuo/rs:fit:800:450:1/g:ce/aHR0cHM6Ly9zdGF0/aWMud2lraWEubm9j/b29raWUubmV0L2U0/MjNiMTM4LTZiYWIt/NDA1YS04ZDU5LTY0/NDQxNWFkZTI3Ni9z/Y2FsZS10by13aWR0/aC1kb3duLzgwMA" alt="<%= name %>">
         </div>
         <div id="details">
-            <h2>Name of the actor</h2>
-            <h3> <span class="label">Born:</span> <span class="value">Born place of actor</span> </h3>
-            <h3> <span class="label">Birtname:</span> <span class="value">Birth name of actor</span> </h3>
-            <h3> <span class="label">Nickname:</span> <span class="value">Nick name of actor</span> </h3>
+            <h2><%= name %></h2>
+            <h3> <span class="label">Born:</span> <span class="value"><%= about.Born %></span> </h3>
+            <h3> <span class="label">Birtname:</span> <span class="value"><%= about['Birth Name'] %></span> </h3>
+            <h3> <span class="label">Nickname:</span> <span class="value"><%= about.Nickname %></span> </h3>
         </div>
     </div>
 </div>

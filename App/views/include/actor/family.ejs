@@ -1,23 +1,11 @@
 <div id="fam-container">
     <h2 id="fam-header">Family</h2>
-   <div class="fam-item"> 
-    <h3 class="fam-label">Spouse:</h3>
-    <h3 class="fam-val">Name of first spouse</h3>
-    <h3 class="fam-val">Name of second spose</h3>
-   </div>
-   <div class="fam-item"> 
-    <h3 class="fam-label">Spouse:</h3>
-    <h3 class="fam-val">Name of first spouse</h3>
-    <h3 class="fam-val">Name of second spose</h3>
-   </div>
-   <div class="fam-item"> 
-    <h3 class="fam-label">Spouse:</h3>
-    <h3 class="fam-val">Name of first spouse</h3>
-    <h3 class="fam-val">Name of second spose</h3>
-   </div>
-   <div class="fam-item"> 
-    <h3 class="fam-label">Spouse:</h3>
-    <h3 class="fam-val">Name of first spouse</h3>
-    <h3 class="fam-val">Name of second spose</h3>
-   </div>
+  <% family.forEach(fam=>{ %>
+    <div class="fam-item"> 
+        <h3 class="fam-label"><%= fam.key %>:</h3>
+        <% fam.val.forEach(item=>{ %>
+            <h3 class="fam-val"><%= item %></h3>
+            <% }) %>
+       </div>
+    <% }) %>
 </div>

@@ -5,6 +5,7 @@ const oscar =  require('../model/oscar')
 const Actor =  require('../model/actors')
 const mov_review = require('../model/reviews_movie')
 const show_review = require('../model/reviews_show')
+const { name } = require('ejs')
 exports.home = (req,res,next)=>{
     res.render('home.ejs',{
         validated:req.session.isloggedIn,
@@ -118,18 +119,51 @@ req.session.episodes = {'season':seasons,'episodes':item.episodes}
 }
 
 exports.actors = async(req,res,next)=>{
-    let actor_name = req.params.name;
+    try{
+        let actor_name = req.params.name;
     let actor = await Actor.find({name:actor_name})
     if(actor){
+        console.log(actor)
+   // parsing actor details
+   let name = actor[0].name;
+   let bio = actor[0].bio;
+   let about = actor[0].phy_attributes;
+   let trivia = actor[0].trivia;
+   // parsing images in write format:
+   let raw_images = actor[0].images;
+   let processed_img =[]
+   
+   raw_images.forEach(img=>{
+  processed_img.push({'name':Object.keys(img)[0],
+  'large':img[Object.keys(img)].large,
+  'small':img[Object.keys(img)].small
+})
+   })
+   let image = processed_img[0].large
+   // parsing family
+   let raw_fam  = actor[0].family;
+   let processed_fam = []
+   raw_fam.forEach(fam=>{
+     let key = fam[0].trim().replace('\n','')
+     let val = fam[1]
+     processed_fam.push({'key':key,'val':val});
+   })
          //finding all the movies and shows of the actor
     let actor_movies = await movies.find({'casts.actor_name':{$in:[actor_name]}})
     let actor_shows = await shows.find({'casts.actor_name':{$in:[actor_name]}})
-       res.render('actor.ejs',{
+    //images ke liye dubara script run karni pdegi
+    res.render('actor.ejs',{
         validated:req.session.isloggedIn,
         record:true,
-        actor:actor,
         actor_movies:actor_movies,
-        actor_shows:actor_shows
+        actor_shows:actor_shows,
+        name:name,
+        description:bio,
+        trivia:trivia,
+        about:about,
+        images:processed_img,
+        family:processed_fam,
+        dp:image
     })
     }
     else{
@@ -138,7 +172,34 @@ exports.actors = async(req,res,next)=>{
         record:false,
         actor:'',
         actor_movies:[],
-        actor_shows:[]
+        actor_shows:[],
+        name:'',
+        description:'',
+        trvia:'',
+        about:'',
+        family:[],
+        images:[],
+        dp:''
+
+})
+    }
+    }
+    catch(err){
+        console.log(err)
+        res.render('actor.ejs',{
+            validated:req.session.isloggedIn,
+            record:false,
+            actor:'',
+            actor_movies:[],
+            actor_shows:[],
+            name:'',
+            description:'',
+            trvia:'',
+            about:'',
+            family:[],
+            images:[],
+            dp:''
+    
     })
     }
   

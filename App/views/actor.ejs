@@ -22,16 +22,16 @@
 <body>
     <%- include('include/general/navigation.ejs')%>
     <% if(record == false){ %>
-        <h2>No data found for this actor</h2>
+        <h2 style="text-align:center;color:white;margin-top:30vh;font-weight:500;">No data found for this actor</h2>
         <% }else { %>
             <%- include('include/actor/info.ejs') %>
-    <h2 class="main-lab">About</h2>
+     <h2 class="main-lab">About</h2>
     <%- include('include/shows_movies/description.ejs') %>
-    <%- include('include/actor/family.ejs')%>
+   <%- include('include/actor/family.ejs')%>
     <h2 class="main-lab" style="margin-top:15px;cursor: pointer;">Images</h2>
-    <%- include('include/actor/images.ejs') %>
+     <%- include('include/actor/images.ejs') %>
     <h2 class="main-lab" style="margin-top:15px;cursor:pointer;">Work</h2>
-    <%- include('include/actor/work.ejs') %>
+   <%- include('include/actor/work.ejs') %>
     <h2 class="main-lab" style="margin-top:15px;">Trivia</h2>
     <%- include('include/actor/trivia.ejs') %>
             <% } %>

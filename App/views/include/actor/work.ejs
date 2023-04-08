@@ -1,46 +1,18 @@
 <div class="ep-row">
+  <% actor_movies.forEach(mov=>{ %>
+    <a href="/movie/<%= mov.title %>" style="text-decoration: none;color:inherit">
+        <div class="episode">
+            <img src="<%= mov.images[0] %>" alt="episode">
+            <h4><%= mov.title %></h4>
+        </div></a>
+    <% }) %>
+   <% actor_shows.forEach(show=>{ %>
+   <a href="/show/<%= show.title %>" style="text-decoration: none;color:inherit">
     <div class="episode">
-        <img src="https://imgs.search.brave.com/ri4hqCSyZBh6gTkfPkJYL-l3pjzDnO-sbxzcns3euuo/rs:fit:1200:1080:1/g:ce/aHR0cHM6Ly9pLnJl/ZGQuaXQvNHVzNmhj/eGozaTM3MS5wbmc" alt="episode">
-        <h4>Title of episode</h4>
+        <img src="<% show.images[0] %>" alt="episode">
+        <h4><%= show.title %></h4>
     </div>
-    <div class="episode">
-        <img src="https://imgs.search.brave.com/ri4hqCSyZBh6gTkfPkJYL-l3pjzDnO-sbxzcns3euuo/rs:fit:1200:1080:1/g:ce/aHR0cHM6Ly9pLnJl/ZGQuaXQvNHVzNmhj/eGozaTM3MS5wbmc" alt="episode">
-        <h4>Title of episode</h4>
-    </div>
-    <div class="episode">
-        <img src="https://imgs.search.brave.com/ri4hqCSyZBh6gTkfPkJYL-l3pjzDnO-sbxzcns3euuo/rs:fit:1200:1080:1/g:ce/aHR0cHM6Ly9pLnJl/ZGQuaXQvNHVzNmhj/eGozaTM3MS5wbmc" alt="episode">
-        <h4>Title of episode</h4>
-    </div>
-    <div class="episode">
-        <img src="https://imgs.search.brave.com/ri4hqCSyZBh6gTkfPkJYL-l3pjzDnO-sbxzcns3euuo/rs:fit:1200:1080:1/g:ce/aHR0cHM6Ly9pLnJl/ZGQuaXQvNHVzNmhj/eGozaTM3MS5wbmc" alt="episode">
-        <h4>Title of episode</h4>
-    </div>
-    <div class="episode">
-        <img src="https://imgs.search.brave.com/ri4hqCSyZBh6gTkfPkJYL-l3pjzDnO-sbxzcns3euuo/rs:fit:1200:1080:1/g:ce/aHR0cHM6Ly9pLnJl/ZGQuaXQvNHVzNmhj/eGozaTM3MS5wbmc" alt="episode">
-        <h4>Title of episode</h4>
-    </div>
-    <div class="episode">
-        <img src="https://imgs.search.brave.com/ri4hqCSyZBh6gTkfPkJYL-l3pjzDnO-sbxzcns3euuo/rs:fit:1200:1080:1/g:ce/aHR0cHM6Ly9pLnJl/ZGQuaXQvNHVzNmhj/eGozaTM3MS5wbmc" alt="episode">
-        <h4>Title of episode</h4>
-    </div>
-    <div class="episode">
-        <img src="https://imgs.search.brave.com/ri4hqCSyZBh6gTkfPkJYL-l3pjzDnO-sbxzcns3euuo/rs:fit:1200:1080:1/g:ce/aHR0cHM6Ly9pLnJl/ZGQuaXQvNHVzNmhj/eGozaTM3MS5wbmc" alt="episode">
-        <h4>Title of episode</h4>
-    </div>
-    <div class="episode">
-        <img src="https://imgs.search.brave.com/ri4hqCSyZBh6gTkfPkJYL-l3pjzDnO-sbxzcns3euuo/rs:fit:1200:1080:1/g:ce/aHR0cHM6Ly9pLnJl/ZGQuaXQvNHVzNmhj/eGozaTM3MS5wbmc" alt="episode">
-        <h4>Title of episode</h4>
-    </div>
-    <div class="episode">
-        <img src="https://imgs.search.brave.com/ri4hqCSyZBh6gTkfPkJYL-l3pjzDnO-sbxzcns3euuo/rs:fit:1200:1080:1/g:ce/aHR0cHM6Ly9pLnJl/ZGQuaXQvNHVzNmhj/eGozaTM3MS5wbmc" alt="episode">
-        <h4>Title of episode</h4>
-    </div>
-    <div class="episode">
-        <img src="https://imgs.search.brave.com/ri4hqCSyZBh6gTkfPkJYL-l3pjzDnO-sbxzcns3euuo/rs:fit:1200:1080:1/g:ce/aHR0cHM6Ly9pLnJl/ZGQuaXQvNHVzNmhj/eGozaTM3MS5wbmc" alt="episode">
-        <h4>Title of episode</h4>
-    </div>
-    <div class="episode">
-        <img src="https://imgs.search.brave.com/ri4hqCSyZBh6gTkfPkJYL-l3pjzDnO-sbxzcns3euuo/rs:fit:1200:1080:1/g:ce/aHR0cHM6Ly9pLnJl/ZGQuaXQvNHVzNmhj/eGozaTM3MS5wbmc" alt="episode">
-        <h4>Title of episode</h4>
-    </div>
+</a>
+    <% }) %>
+   
 </div>
