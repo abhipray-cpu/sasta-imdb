@@ -31,7 +31,8 @@ let transporter = nodeMailer.createTransport({
 })
 
 exports.landingPage = async(req,res,next)=>{
-        // things required for landing page
+        try{
+            // things required for landing page
         // top 7 trending movies and 7 trending shows
         const trend_movies = await Movie.find({}).sort({'viewCount':1,'rating':1}).limit(7).select({images:1,description:1,title:1,ratings:1})
         const trend_shows = await Show.find({}).sort({'viewCount':1,'rating':1}).limit(7).select({images:1,title:1,description:1,ratings:1})
@@ -81,21 +82,32 @@ exports.landingPage = async(req,res,next)=>{
             History:{'movie':history_movie,'show':history_show}
             }    
         })
+        }
+        catch(err){
+            console.log(err)
+            res.render('error.ejs')
+        }
     }
 
 exports.login = (req, res, next) => {
 
-    if (req.session.isloggedIn === true) {
+    try{
+        if (req.session.isloggedIn === true) {
 
-        res.redirect(`/`)
-    } else {
-
-        res.render('login.ejs', {
-            pageTitle: 'Login',
-            err:[],
-            user: '',
-
-        })
+            res.redirect(`/`)
+        } else {
+    
+            res.render('login.ejs', {
+                pageTitle: 'Login',
+                err:[],
+                user: '',
+    
+            })
+        }
+    }
+    catch(err){
+        console.log(err)
+        res.render('error.ejs')
     }
 }
 exports.signup = (req, res, next) => {
@@ -109,6 +121,7 @@ exports.signup = (req, res, next) => {
     })
 }
 exports.login_check = (req, res, next) => {
+   try{
     const name = req.body.name;
     const password = req.body.password
     const errors = validationResult(req).errors //all the errors realted to this req which were caught by the check middleware will be addded to this validationResult
@@ -161,9 +174,15 @@ exports.login_check = (req, res, next) => {
         })
 
 
+   }
+   catch(err){
+    console.log(err);
+    res.render('error.ejs')
+   }
 }
 exports.signup_check = (req, res, next) => {
-        const name = req.body.name;
+        try{
+            const name = req.body.name;
         const password = req.body.password
         const confirm = req.body.confirm //this is the confirmation password
         const errors = validationResult(req).errors //all the errors realted to this req which were caught by the check middleware will be addded to this validationResult
@@ -242,6 +261,11 @@ exports.signup_check = (req, res, next) => {
                 }
             })
         }
+        }
+        catch(err){
+            console.log(err);
+            res.render('error.ejs')
+        }
     }
 //     //here we will be using magic association methods to fetch all the movies belonging to a user
 // exports.user = (req, res, next) => {
@@ -300,6 +324,7 @@ exports.ChangingPassword = (req, res, next) => {
 }
 
 exports.changePassword = (req, res, next) => {
+   try{
     crypto.randomBytes(32, (err, buffer) => {
         if (err) {
             logger.log({level:'error',messagee:err});
@@ -379,10 +404,16 @@ exports.changePassword = (req, res, next) => {
             error.httpStatusCode = 500;
             return next(error);
         })
+   }
+   catch(err){
+    console.log(err);
+    res.render('error.ejs')
+   }
 }
 
 exports.confirmPasswordChange = (req, res, next) => {
-    User.findById(req.params.userId)
+    try{
+        User.findById(req.params.userId)
         //if you want to include a time restraint you can do like this
         //User.find({resetToken:token,resetTokenExpiration:{$gt:Date.now()}})
         .then(user => {
@@ -407,31 +438,42 @@ exports.confirmPasswordChange = (req, res, next) => {
         .catch(err => {
             logger.log({level:'error',message:err});
         })
+    }
+    catch(err){
+        console.log(err)
+        res.render('error.ejs')
+    }
 }
 
 exports.confirmPasswordChange1 = (req, res, next) => {
+  try{
     User.find({email:req.params.email})
-        //if you want to include a time restraint you can do like this
-        //User.find({resetToken:token,resetTokenExpiration:{$gt:Date.now()}})
-        .then(user => {
-            if (user) {
-                    res.render('passwordChange2A.ejs', {
-                        email: req.params.email,
-                        error: ''
-                    })
-                
-            }
-            else {
-                res.render('forgot.ejs', {
-                    message: '',
-                    error: req.flash('Timeout error')
+    //if you want to include a time restraint you can do like this
+    //User.find({resetToken:token,resetTokenExpiration:{$gt:Date.now()}})
+    .then(user => {
+        if (user) {
+                res.render('passwordChange2A.ejs', {
+                    email: req.params.email,
+                    error: ''
                 })
-            }
-        })
-        .catch(err => {
-            logger.log({level:'error',message:err})
-            res.render('500.ejs');
-        })
+            
+        }
+        else {
+            res.render('forgot.ejs', {
+                message: '',
+                error: req.flash('Timeout error')
+            })
+        }
+    })
+    .catch(err => {
+        logger.log({level:'error',message:err})
+        res.render('500.ejs');
+    })
+  }
+  catch(err){
+    console.log(err);
+    res.render('error.ejs')
+  }
 }
 
 
@@ -602,7 +644,8 @@ exports.remindPassword = async(req, res, next) => {
 }
 exports.watchList = async (req,res,next)=>{
 
-    /*this is the coding for the sort
+   try{
+     /*this is the coding for the sort
     0=>none
     1=>latest
     2=>oldest
@@ -635,6 +678,11 @@ exports.watchList = async (req,res,next)=>{
             empty:true
         })
     }
+   }
+   catch(err){
+    console.log(err);
+    res.render('error.ejs')
+   }
 }
 
 exports.user = (req,res,next)=>{
@@ -870,37 +918,43 @@ catch(err){
 
 // fetching the userdtails
 exports.getRecommendation = async(req,res,next)=>{
-  let watch = await Watchlist.find({user:req.session.userId}).populate('movies').sort({'viewCount':1}).populate('shows');
-  let movies = watch[0].movies;
-  let shows = watch[0].shows;
-  // collecting the genres
-  genres = []
-  movies.forEach(mov=>{
-    let categories = mov.category;
-    categories.forEach(catg=>{
-        if(genres.indexOf(catg)==-1){
-            genres.push(catg)
-        }
+ try{
+    let watch = await Watchlist.find({user:req.session.userId}).populate('movies').sort({'viewCount':1}).populate('shows');
+    let movies = watch[0].movies;
+    let shows = watch[0].shows;
+    // collecting the genres
+    genres = []
+    movies.forEach(mov=>{
+      let categories = mov.category;
+      categories.forEach(catg=>{
+          if(genres.indexOf(catg)==-1){
+              genres.push(catg)
+          }
+      })
     })
-  })
-  shows.forEach(mov=>{
-    let categories = mov.category;
-    categories.forEach(catg=>{
-        if(genres.indexOf(catg)==-1){
-            genres.push(catg)
-        }
+    shows.forEach(mov=>{
+      let categories = mov.category;
+      categories.forEach(catg=>{
+          if(genres.indexOf(catg)==-1){
+              genres.push(catg)
+          }
+      })
     })
-  })
-  // fetching the movies
- 
-let fetch_mov = await Movie.find({'category':{$in:genres}}).sort({'viewCount':1,'ratings':1}).limit(20)
-  // fetching the shows
-let fetch_show = await Show.find({'category':{$in:genres}}).sort({'viewCount':1,ratings:1}).limit(20)
-  res.render('recommendation.ejs',{
-    title:'Recommendations',
-     movies:fetch_mov,
-     shows:fetch_show,
-     validated:req.session.isloggedIn,
-  })
+    // fetching the movies
+   
+  let fetch_mov = await Movie.find({'category':{$in:genres}}).sort({'viewCount':1,'ratings':1}).limit(20)
+    // fetching the shows
+  let fetch_show = await Show.find({'category':{$in:genres}}).sort({'viewCount':1,ratings:1}).limit(20)
+    res.render('recommendation.ejs',{
+      title:'Recommendations',
+       movies:fetch_mov,
+       shows:fetch_show,
+       validated:req.session.isloggedIn,
+    })
+ }
+ catch(err){
+    console.log(err);
+    res.render('error.ejs')
+ }
     
 }

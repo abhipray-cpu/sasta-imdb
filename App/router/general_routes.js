@@ -11,7 +11,6 @@ const isAuth = (req, res, next) => {
     }
 }
 router.get('/home',controller.home)
-router.get('/results',controller.results)
 router.get('/show/:showName',controller.shows)
 router.get('/movie/:movName',controller.movies)
 router.get('/actor/:name',controller.actors)

@@ -12,11 +12,7 @@ exports.home = (req,res,next)=>{
     })
 } 
  
-exports.results = (req,res,render)=>{
-    res.render('search.ejs',{
-        validated:req.session.isloggedIn,
-    })
-}
+
 exports.searchMenu = (req,res,next)=>{
     res.render('search-menu.ejs',{
         validated:req.session.isloggedIn,
@@ -24,6 +20,7 @@ exports.searchMenu = (req,res,next)=>{
 }
 //will be fetching the data for movie using the movie title
 exports.movies = async (req,res,next)=>{
+   try{
     let mov_name = req.params.movName;
     const movie = await movies.find({title:mov_name})
       if(movie.length>0){
@@ -65,10 +62,16 @@ console.log(revs)
     else{
         res.render('500.ejs')
     }
+   }
+   catch(err){
+    console.log(err);
+    res.render('error.ejs')
+   }
 
 }
 
 exports.shows = async (req,res,next)=>{
+   try{
     let show_name = req.params.showName;
     const show = await shows.find({title:show_name})
       if(show.length>0){
@@ -115,8 +118,13 @@ req.session.episodes = {'season':seasons,'episodes':item.episodes}
         })
     }
     else{
-        res.render('500.ejs')
+        res.render('error.ejs')
     }
+   }
+   catch(err){
+    console.log(err)
+    res.render('500.ejs')
+   }
 }
 
 exports.actors = async(req,res,next)=>{
@@ -206,21 +214,28 @@ exports.actors = async(req,res,next)=>{
   
 }
 exports.epDetails = (req,res,next)=>{
-   let season = req.session.episodes.season;
-   let episodes = req.session.episodes.episodes;
-    res.render('episode_detail.ejs',{
-        title:req.params.title,
-        air:req.params.air,
-        description:req.params.description,
-        image:req.params[0],
-        seasons:season,
-        episodes:episodes,
-        validated:req.session.isloggedIn
-        
-    })
+  try{
+    let season = req.session.episodes.season;
+    let episodes = req.session.episodes.episodes;
+     res.render('episode_detail.ejs',{
+         title:req.params.title,
+         air:req.params.air,
+         description:req.params.description,
+         image:req.params[0],
+         seasons:season,
+         episodes:episodes,
+         validated:req.session.isloggedIn
+         
+     })
+  }
+  catch(err){
+    console.log(err)
+    res.render('error.ejs')
+  }
 }
 exports.trending = async(req,res,next)=>{
-    const trend_movies = await movies.find({}).sort({'viewCount':1,'rating':1}).limit(15)
+    try{
+        const trend_movies = await movies.find({}).sort({'viewCount':1,'rating':1}).limit(15)
     const trend_shows = await shows.find({}).sort({'viewCount':1,'rating':1}).limit(15)
     res.render('trending.ejs',{
         title:"trending",
@@ -228,6 +243,11 @@ exports.trending = async(req,res,next)=>{
         shows:trend_shows,
         movies:trend_movies
     })
+    }
+    catch(err){
+        console.log(err)
+        res.render('error.ejs')
+    }
 }
 // since we have not create users docs therefore if it does not exists we will simply create it
 
@@ -236,28 +256,34 @@ exports.getSearch = async(req,res,next)=>{
 }
 
 exports.searchResult=async(req,res,next)=>{
+   try{
     let searchVal = req.body.value;
-   let result1 = await movies.find({$text:{$search:searchVal}}).limit(20);
-   let result2 = await shows.find({$text:{$search:searchVal}}).limit(20);
-   console.log(result1)
-   if(result1.length>0 || result2.length>0){
-    return res.render('search.ejs',{
-        title:'search',
-        movies:result1,
-        shows:result2,
-        validated:req.session.isloggedIn,
-        empty:false
-    })
+    let result1 = await movies.find({$text:{$search:searchVal}}).limit(20);
+    let result2 = await shows.find({$text:{$search:searchVal}}).limit(20);
+    console.log(result1)
+    if(result1.length>0 || result2.length>0){
+     return res.render('search.ejs',{
+         title:'search',
+         movies:result1,
+         shows:result2,
+         validated:req.session.isloggedIn,
+         empty:false
+     })
+    }
+    // if there are no results
+    else{
+     return res.render('search.ejs',{
+         title:'search',
+         movies:[],
+         shows:[],
+         validated:req.session.isloggedIn,
+         empty:true
+     })
+ 
+    }
    }
-   // if there are no results
-   else{
-    return res.render('search.ejs',{
-        title:'search',
-        movies:[],
-        shows:[],
-        validated:req.session.isloggedIn,
-        empty:true
-    })
-
+   catch(err){
+    console.log(err);
+    res.render('error.ejs')
    }
 }
