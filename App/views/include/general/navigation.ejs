@@ -5,8 +5,10 @@
         <img src="/images/home_logo.png" alt="logo" id="home-log">
     </a>
   <div id="search">
-    <form action="#" method="POST">
-        <input type="text" name="search-box" id="search-box" placeholder="Search..">
+    <form action="/search" method="POST">
+        <input type="submit" hidden />
+        <input type="hidden" value="<%= csrfToken %>" name="_csrf">
+        <input type="text" name="value" id="search-box" placeholder="Search..">
      </form>   
      <button type = 'submit' id="search-button">
         Search
@@ -34,9 +36,12 @@
                 <img src="/images/home_logo_mobile.png" alt="home-log">
             </a>
             <div id="search">
-                <form action="#" method="POST">
-                    <input type="text" name="search-box" id="search-box" placeholder="Search..">
-                </form>   
+             <form action="/search" method="POST">
+                <input type="hidden" value="<%= csrfToken %>" name="_csrf">
+                <input type="submit" hidden />
+                <input type="text" name="value" id="search-box" placeholder="Search..">
+
+             </form>
               
             </div> 
         </div>

@@ -5,11 +5,15 @@ const Schema = mongoose.Schema
 const reviewSchema = new Schema({
     user:{
         type:Schema.Types.ObjectId,
-        ref:'User'
+        ref:'Users'
     },
     movie:{
-        type:Schema.Types.ObjectId,
-        ref:'Movies'
+        type:String,
+        require:true
+    },
+    catg:{
+        type:'String',
+        enum:['movie','show']
     },
     rating:{
         type:Number,

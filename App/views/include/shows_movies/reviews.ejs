@@ -1,7 +1,8 @@
 <div id="rev-container">
     <div id="rate">
         <h2>Rate</h2>
-        <form action="#" method="POST">
+        <form action="/add_rev/<%= title %>/<%= type %>" method="POST">
+            <input type="hidden" value="<%= csrfToken %>" name="_csrf">
             <div class="star-widget">
                 <input type="radio" name="rate" id="rate-5" style="display:none" value="5">
                 <label for="rate-5" class="fas fa-star"></label>
@@ -14,7 +15,7 @@
                 <input type="radio" name="rate" id="rate-1" style="display:none" value="1">
                 <label for="rate-1" class="fas fa-star"></label>
             </div>
-            <textarea name="content" id="content" cols="80" rows="12" style="font-size:18px;">Write your review</textarea>
+            <textarea name="content" id="content" cols="80" rows="12" style="font-size:18px;" required>Write your review</textarea>
             <button type="Submit" id="btn">
                   Submit
               </button>
@@ -26,40 +27,19 @@
             <h3 style="text-align:center;font-size:32px;font-weight: 450;">No reviews found!!</h3>
             <% } else { %>
                 <div id="revs">
-                    <div class="review">
-                        <h3>Username <span class="user-rate">4.1</span></h3>
-                        <p>This will contain the content of the review</p>
-                    </div>
-                    <div class="review">
-                        <h3>Username <span class="user-rate">4.1</span></h3>
-                        <p>This will contain the content of the review</p>
-                    </div>
-                    <div class="review">
-                        <h3>Username <span class="user-rate">4.1</span></h3>
-                        <p>This will contain the content of the review</p>
-                    </div>
-                    <div class="review">
-                        <h3>Username <span class="user-rate">4.1</span></h3>
-                        <p>This will contain the content of the review</p>
-                    </div>
-                    <div class="review">
-                        <h3>Username <span class="user-rate">4.1</span></h3>
-                        <p>This will contain the content of the review</p>
-                    </div>
-                    <div class="review">
-                        <h3>Username <span class="user-rate">4.1</span></h3>
-                        <p>This will contain the content of the review</p>
-                    </div>
-                    <div class="review">
-                        <h3>Username <span class="user-rate">4.1</span></h3>
-                        <p>This will contain the content of the review</p>
-                    </div>
-                    <div class="review">
-                        <h3>Username <span class="user-rate">4.1</span></h3>
-                        <p>This will contain the content of the review</p>
-                    </div>
+                    <% reviews.forEach(review=>{ %>
+                        <div class="review">
+                            <h3><%= review.user.name %> <span class="user-rate"><%= review.rating %></span></h3>
+                            <p><%= review.content %></p>
+                        </div>
+                        <% }) %>
+                    
         
-                    <h4 id="all">See all reviews..</h4>
+                    <% if(reviews.length  > 20){ %>
+                        <a href="/review/name" style="text-decoration: none;color:inherit">
+                            <h4 id="all">See all reviews..</h4>
+                        </a>
+                        <% } %>
                 </div>
         <% } %>
     </div>

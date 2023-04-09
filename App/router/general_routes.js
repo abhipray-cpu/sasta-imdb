@@ -12,10 +12,10 @@ const isAuth = (req, res, next) => {
 }
 router.get('/home',controller.home)
 router.get('/results',controller.results)
-router.get('/search-menu',controller.searchMenu)
 router.get('/show/:showName',controller.shows)
 router.get('/movie/:movName',controller.movies)
 router.get('/actor/:name',controller.actors)
 router.get('/epDetails/:title/:air/:description/*',controller.epDetails)
 router.get('/trending',controller.trending);
+router.post('/search',controller.searchResult)
 module.exports = router

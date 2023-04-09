@@ -40,7 +40,7 @@ const showSchema = new Schema({
   ratings:{
     type:Number
   }
-})
+}).index({title:'text',category:'text'},{weights:{title:10,category:6}})
 
 module.exports = mongoose.model('Shows',showSchema)
 

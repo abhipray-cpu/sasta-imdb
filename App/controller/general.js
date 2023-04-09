@@ -29,6 +29,7 @@ exports.movies = async (req,res,next)=>{
       if(movie.length>0){
         let item = movie[0]
         let mov_id = item._id;
+        let reviews;
      //fetching the reviews for movie
      try{
         let result = await movies.updateOne({_id:mov_id},{$set:{'viewCount':item.viewCount+1}}) //this will be used while finding trending items
@@ -37,13 +38,13 @@ exports.movies = async (req,res,next)=>{
      catch(err){
         console.log(err);
      }
-     let revs = await mov_review.find({movie:mov_id})
+     let revs = await mov_review.find({movie:item.title}).populate('user','name')
      if(revs.length == 0)
      reviews=[]
      else
      reviews=revs
 //update the viewcount of the movie
-
+console.log(revs)
         res.render('movies.ejs',{
             id:item._id,
             title:item.title,
@@ -82,7 +83,7 @@ exports.shows = async (req,res,next)=>{
      catch(err){
         console.log(err);
      }
-     let revs = await mov_review.find({movie:show_id})
+     let revs = await mov_review.find({movie:item.title})
      if(revs.length == 0)
      reviews=[]
      else
@@ -229,3 +230,34 @@ exports.trending = async(req,res,next)=>{
     })
 }
 // since we have not create users docs therefore if it does not exists we will simply create it
+
+exports.getSearch = async(req,res,next)=>{
+    res.render('searchPage.ejs')
+}
+
+exports.searchResult=async(req,res,next)=>{
+    let searchVal = req.body.value;
+   let result1 = await movies.find({$text:{$search:searchVal}}).limit(20);
+   let result2 = await shows.find({$text:{$search:searchVal}}).limit(20);
+   console.log(result1)
+   if(result1.length>0 || result2.length>0){
+    return res.render('search.ejs',{
+        title:'search',
+        movies:result1,
+        shows:result2,
+        validated:req.session.isloggedIn,
+        empty:false
+    })
+   }
+   // if there are no results
+   else{
+    return res.render('search.ejs',{
+        title:'search',
+        movies:[],
+        shows:[],
+        validated:req.session.isloggedIn,
+        empty:true
+    })
+
+   }
+}

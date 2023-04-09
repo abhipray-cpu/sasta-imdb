@@ -26,7 +26,7 @@ const actorsSchema = new Schema({
  },
  rank:{
     type:Number
- },
+ }
 // need to add reference to movies collection here
 })
 

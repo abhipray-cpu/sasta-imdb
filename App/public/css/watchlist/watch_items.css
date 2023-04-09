@@ -4,7 +4,7 @@
     }
     .item{
         width:100vw;
-        height:340px;
+        height:344px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.72);
         display: grid;
         grid-template-columns:449px 44vw 20vw;
@@ -157,7 +157,7 @@ border-radius:10px;
     }
     .item{
         width:100vw;
-        height:220px;
+        height:224px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.72);
         display: grid;
         grid-template-columns:35vw 75vw;

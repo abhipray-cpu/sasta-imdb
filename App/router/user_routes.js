@@ -97,4 +97,8 @@ router.get('/user',isAuth,controller.user)
 router.get('/suggestions',isAuth,controller.suggestions)
 router.get('/upvote/:item/:type',isAuth,controller.upvote)
 router.get('/watchlist/:item/:type',isAuth,controller.addWatch)
+router.post('/add_rev/:name/:type',isAuth,controller.addReview)
+router.get('/edit_details',isAuth,controller.getChangeDetails)
+router.post('/edit_details',isAuth,controller.postEditDetails)
+router.get('/recommendation',isAuth,controller.getRecommendation)
 module.exports = router

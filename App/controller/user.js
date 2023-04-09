@@ -15,6 +15,7 @@ require('dotenv').config();
 const { validationResult } = require('express-validator')
 const Movie = require('../model/movies')
 const Show =  require('../model/shows');
+const Review = require('../model/reviews_movie')
 const Watchlist = require('../model/watchList')
 const { movies } = require('./general');
 const { warn } = require('console');
@@ -769,4 +770,137 @@ exports.addWatch = async(req,res,next)=>{
         }
       }
       res.status(204).send();
+}
+
+exports.addReview=async(req,res,next)=>{
+    try{
+        let userId =  req.session.userId;
+    let name = req.params.name;
+    let type = req.params.type;
+    let rate = req.body.rate;
+    let content =  req.body.content;
+
+    // creating the review doc:
+    //1) checking if a review with same userID and movie name exists
+    let check = await Review.find({user:userId,movie:name})
+    if(check.length>0){
+        await Review.updateOne({user:userId},{$set:{'content':content,'rate':rate}})
+    }
+    //2) If the review do not exists than create the new doc or just update the existing one
+    else{
+        let newRev = new Review({
+            user:userId,
+            movie:name,
+            catg:type,
+            rating:rate,
+            content:content
+        })
+        await newRev.save();
+    }
+    res.status(204).send();
+    }
+    catch(err){
+        console.log(err)
+        res.status(204).send();
+    }
+}
+exports.getChangeDetails = async(req,res,next)=>{
+    let userId = req.session.userId;
+    //fetching user
+    let user = await User.find({_id:userId})
+    user = user[0]
+
+    res.render('changeDetails.ejs',{
+        pageTitle: 'signup',
+        error: '',
+        user_name: user.name,
+        email: user.email,
+        contact: user.contact
+    })
+
+}
+exports.postEditDetails = async(req,res,next)=>{
+    //make changes in here
+    let userId = req.session.userId;
+    //performing validation checks in here
+    let user = await User.find({_id:userId})
+    user=user[0];
+    let new_name = req.body.name;
+    let new_email = req.body.email;
+    // validating these
+    let user_name = await User.find({name:new_name});
+    let user_email = await User.find({email:new_email});
+    if(user_name.length>0){
+       if(new_name!=user_name[0].name){
+        return res.render('changeDetails.ejs',{
+            pageTitle: 'signup',
+            error: '1',
+            user_name:'',
+            email: user.email,
+            contact: user.contact
+        })
+       }
+    }
+    if(user_email.length>0){
+      if(new_email!=user_email[0].email){
+        return res.render('changeDetails.ejs',{
+            pageTitle: 'signup',
+            error: '2',
+            user_name: user.name,
+            email:'',
+            contact: user.contact
+        })
+      }
+    }
+   
+// editing the user details if there are no validation 
+try{
+    let res = await User.updateOne({_id:userId},{$set:{
+        name: req.body.name,
+        email: req.body.email,
+        contact:req.body.contact,
+    }})
+    console.log(res);
+}
+catch(err){
+    console.log(err);
+}
+    res.redirect('/user')
+}
+
+// fetching the userdtails
+exports.getRecommendation = async(req,res,next)=>{
+  let watch = await Watchlist.find({user:req.session.userId}).populate('movies').sort({'viewCount':1}).populate('shows');
+  let movies = watch[0].movies;
+  let shows = watch[0].shows;
+  // collecting the genres
+  genres = []
+  movies.forEach(mov=>{
+    let categories = mov.category;
+    categories.forEach(catg=>{
+        if(genres.indexOf(catg)==-1){
+            genres.push(catg)
+        }
+    })
+  })
+  shows.forEach(mov=>{
+    let categories = mov.category;
+    categories.forEach(catg=>{
+        if(genres.indexOf(catg)==-1){
+            genres.push(catg)
+        }
+    })
+  })
+  // fetching the movies
+ 
+let fetch_mov = await Movie.find({'category':{$in:genres}}).sort({'viewCount':1,'ratings':1}).limit(20)
+  // fetching the shows
+let fetch_show = await Show.find({'category':{$in:genres}}).sort({'viewCount':1,ratings:1}).limit(20)
+  res.render('recommendation.ejs',{
+    title:'Recommendations',
+     movies:fetch_mov,
+     shows:fetch_show,
+     validated:req.session.isloggedIn,
+  })
+    
 }
