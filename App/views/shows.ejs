@@ -31,7 +31,9 @@
     </div>
     <%- include('include/shows_movies/genres.ejs') %>
     <%- include('include/shows_movies/images.ejs') %>
-    <%- include('include/shows_movies/episodes.ejs') %>
+    <% if(eps.length > 0) {%>
+        <%- include('include/shows_movies/episodes.ejs') %>
+        <% } %>
     <%- include('include/shows_movies/cast.ejs') %>
     <%- include('include/shows_movies/reviews.ejs') %>
 </body>

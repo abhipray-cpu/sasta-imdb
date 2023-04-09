@@ -1,0 +1,186 @@
+2023-04-09T22:34:24.800Z [app-server] [34m[1minfo[22m[39m: connnected to the mongodb server sucessfully! and listening on port:4000
+2023-04-09T22:35:13.323Z:[app-server]:[34m[1minfo[22m[39m:connnected to the mongodb server sucessfully! and listening on port:4000
+2023-04-09T22:35:17.680Z.trim():[app-server]:[34m[1minfo[22m[39m:connnected to the mongodb server sucessfully! and listening on port:4000
+2023-04-09T22:37:59.671Z.trim():[app-server]:[34m[1minfo[22m[39m:connnected to the mongodb server sucessfully! and listening on port:4000
+2023-04-09T22:39:06.519Z.trim():[app-server]:[34m[1minfo[22m[39m:connnected to the mongodb server sucessfully! and listening on port:4000
+2023-04-09T22:39:25.459Z.trim():[app-server]:[34m[1minfo[22m[39m:connnected to the mongodb server sucessfully! and listening on port:4000
+2023-04-09T22:39:39.006Z.trim():[app-server]:[34m[1minfo[22m[39m:connnected to the mongodb server sucessfully! and listening on port:4000
+2023-04-09T22:40:25.791Z:[app-server]:[34m[1minfo[22m[39m:connnected to the mongodb server sucessfully! and listening on port:4000
+2023-04-09T22:42:15.082Z:[app-server]:[34m[1minfo[22m[39m:connnected to the mongodb server sucessfully! and listening on port:4000
+2023-04-09T22:42:50.658Z:[app-server]:[32minfo[39m:[32mconnnected to the mongodb server sucessfully! and listening on port:4000[39m
+2023-04-09T22:43:09.328Z:[app-server]:[34m[1minfo[22m[39m:connnected to the mongodb server sucessfully! and listening on port:4000
+2023-04-09T22:43:18.020Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T22:43:48.521Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Gibi
+2023-04-09T22:43:54.196Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Curb Your Enthusiasm
+2023-04-09T22:44:48.064Z:[app-server]:[34m[1minfo[22m[39m:connnected to the mongodb server sucessfully! and listening on port:4000
+2023-04-09T22:44:55.321Z:[app-server]:[34m[1minfo[22m[39m:connnected to the mongodb server sucessfully! and listening on port:4000
+2023-04-09T22:45:01.545Z:[app-server]:[34m[1minfo[22m[39m:connnected to the mongodb server sucessfully! and listening on port:4000
+2023-04-09T22:45:15.586Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T22:45:31.989Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Rick and Morty
+2023-04-09T22:45:43.849Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Adventure Time
+2023-04-09T22:49:31.777Z:[app-server]:[34m[1minfo[22m[39m:connnected to the mongodb server sucessfully! and listening on port:4000
+2023-04-09T22:49:35.629Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T22:49:35.668Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T22:50:02.424Z:[app-server]:[34m[1minfo[22m[39m:connnected to the mongodb server sucessfully! and listening on port:4000
+2023-04-09T22:50:05.263Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T22:50:36.884Z:[app-server]:[34m[1minfo[22m[39m:connnected to the mongodb server sucessfully! and listening on port:4000
+2023-04-09T22:51:24.336Z:[app-server]:[34m[1minfo[22m[39m:connnected to the mongodb server sucessfully! and listening on port:4000
+2023-04-09T22:51:44.601Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T22:51:44.851Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T22:52:17.495Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T22:52:17.537Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T22:53:16.414Z:[app-server]:[34m[1minfo[22m[39m:update the view count forToy Story 3
+2023-04-09T22:53:28.717Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T22:53:28.756Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T22:53:56.077Z:[app-server]:[34m[1minfo[22m[39m:connnected to the mongodb server sucessfully! and listening on port:4000
+2023-04-09T22:54:11.338Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T22:54:11.379Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T22:55:00.637Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T22:55:00.678Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T22:55:30.304Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T22:55:30.345Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T22:56:23.655Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T22:56:23.697Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T22:56:24.712Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T22:56:24.768Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T22:56:25.320Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T22:56:25.364Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T22:57:00.130Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T22:57:00.174Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T22:57:14.369Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T22:57:14.411Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T22:57:15.364Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T22:57:15.410Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T22:57:15.700Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T22:57:15.740Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T22:57:16.084Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T22:57:16.125Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T22:57:39.650Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T22:57:39.690Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T22:58:41.700Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T22:58:41.742Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T22:58:56.143Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T22:58:56.182Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T22:59:31.342Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T22:59:31.391Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T23:00:01.243Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T23:00:01.292Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T23:00:12.223Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T23:00:12.268Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T23:00:29.870Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T23:00:29.911Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T23:00:49.624Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T23:00:49.667Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T23:01:16.711Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T23:01:16.753Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T23:01:38.250Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T23:01:38.291Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T23:02:11.978Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T23:02:12.019Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T23:02:29.393Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T23:02:29.434Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T23:02:30.860Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T23:02:30.901Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T23:02:49.576Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T23:02:49.617Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T23:02:50.697Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T23:02:50.743Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T23:02:51.017Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T23:02:51.056Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T23:02:51.357Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T23:02:51.401Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T23:03:05.218Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T23:03:05.265Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T23:03:13.400Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T23:03:13.441Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T23:03:25.717Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T23:03:25.760Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T23:03:26.259Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T23:03:26.301Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T23:04:30.846Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T23:04:30.892Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T23:04:31.328Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T23:04:31.368Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T23:04:48.286Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T23:04:48.326Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T23:04:48.855Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T23:04:48.917Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T23:05:07.845Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T23:05:07.886Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T23:05:08.374Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T23:05:08.415Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T23:05:28.056Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T23:05:28.097Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T23:05:28.571Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T23:05:28.620Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T23:05:55.278Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T23:05:55.321Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T23:05:55.812Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T23:05:55.853Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T23:06:04.245Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T23:06:04.293Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T23:06:44.098Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T23:06:44.137Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T23:06:45.436Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T23:06:45.477Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T23:07:17.907Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T23:07:18.218Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T23:07:19.590Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T23:07:19.630Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T23:07:33.555Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T23:07:33.595Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T23:07:34.827Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T23:07:34.872Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T23:07:35.729Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T23:07:35.769Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T23:07:50.722Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T23:07:50.761Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T23:07:51.566Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T23:07:51.607Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T23:07:51.889Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T23:07:51.930Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T23:07:52.234Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T23:07:52.276Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T23:07:52.551Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T23:07:52.592Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T23:08:39.820Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T23:08:39.861Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T23:08:40.753Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T23:08:40.793Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T23:08:58.448Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T23:08:58.489Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T23:09:25.081Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T23:09:25.122Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T23:09:47.392Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T23:09:47.433Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T23:09:48.692Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T23:09:48.736Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T23:10:23.066Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T23:10:23.111Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T23:10:43.586Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T23:10:43.629Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T23:10:54.581Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T23:10:54.622Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T23:11:02.209Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T23:11:02.252Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T23:11:38.955Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T23:11:39.007Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T23:11:55.700Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T23:11:55.742Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T23:12:05.564Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Bhabi Ji Ghar Par Hai
+2023-04-09T23:12:05.604Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Bhabi Ji Ghar Par Hai
+2023-04-09T23:12:20.017Z:[app-server]:[34m[1minfo[22m[39m:update the view count forLife of Brian
+2023-04-09T23:12:37.628Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Monty Python's Flying Circus
+2023-04-09T23:12:37.669Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Monty Python's Flying Circus
+2023-04-09T23:12:42.363Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Monty Python's Flying Circus
+2023-04-09T23:12:42.408Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Monty Python's Flying Circus
+2023-04-09T23:13:14.886Z:[app-server]:[34m[1minfo[22m[39m:update the view count forFinding Nemo
+2023-04-09T23:13:20.087Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Father Ted
+2023-04-09T23:13:20.125Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Father Ted
+2023-04-09T23:14:00.174Z:[app-server]:[34m[1minfo[22m[39m:connnected to the mongodb server sucessfully! and listening on port:4000
+2023-04-09T23:14:06.455Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Father Ted
+2023-04-09T23:14:06.508Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Father Ted
+2023-04-09T23:15:13.663Z:[app-server]:[34m[1minfo[22m[39m:connnected to the mongodb server sucessfully! and listening on port:4000
+2023-04-09T23:15:19.800Z:[app-server]:[34m[1minfo[22m[39m:updated the viewcount for Father Ted
+2023-04-09T23:15:19.851Z:[app-server]:[31m[1merror[22m[39m:unable to fetch the show for doc Father Ted
+2023-04-09T23:16:12.759Z:[app-server]:[34m[1minfo[22m[39m:connnected to the mongodb server sucessfully! and listening on port:4000

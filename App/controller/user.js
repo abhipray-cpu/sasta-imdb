@@ -168,9 +168,7 @@ exports.login_check = (req, res, next) => {
         })
         .catch(err => {
             logger.log({level:'error',message:`failed to vaidate user ${err}`})
-            const error = new Error('Server side erorr failed to fetch details')
-            error.httpStatusCode = 500;
-            return next(error);
+            res.render('error.ejs')
         })
 
 
@@ -209,11 +207,10 @@ exports.signup_check = (req, res, next) => {
                                 contact:req.body.contact,
                                 interests:[]
                             }).then(person => {
-                                logger.log('user is created sucessfully!!')
+                                logger.log('info','user is created sucessfully!!')
                                 res.render('login.ejs', {
                                     pageTitle: 'Login',
-                                    error1: req.flash('NoUser'), //no user found
-                                    error2: req.flash('WrongPassword'), //password error
+                                    err:[],
                                     user: name
                                 })
                                 let mailOptions = {
@@ -251,8 +248,7 @@ exports.signup_check = (req, res, next) => {
             res.render('signup.ejs', {
                 pageTitle: 'Signup',
 
-                errorMessage: req.flash('errorUser'), //we simply specify the
-                errorPaswd: req.flash('errorMismatch'),
+                error:'',
                 value: {
                     userName: req.body.name,
                     Email: req.body.email,
@@ -706,19 +702,19 @@ let type = req.params.type;
 if(type == 'movie'){
     try{
         let result = await Movie.updateOne({_id:item},{$inc:{'likeCount':1}})
-        console.log(result)
+    
     }
     catch(err){
-        console.log(err)
+        logger.log({'level':'error','message':'err'})
     }
 }
 else{
     try{
         let result = await Show.updateOne({_id:item},{$inc:{'likeCount':1}})
-        console.log(result)
+      
     }
     catch(err){
-        console.log(err)
+        logger.log({'level':'error','message':'err'})
     }
 }
 res.status(204).send();
@@ -743,10 +739,10 @@ exports.addWatch = async(req,res,next)=>{
            }
            try{
             let mov_update = await Watchlist.updateOne({user:user},{$set:{'movies':movies},$inc:{'movieCount':increase}})
-            console.log(mov_update)
+        
            }
            catch(err){
-            console.log(err)
+logger.log({'level':'error','message':err})
            }
         }
         // creat doc

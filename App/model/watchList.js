@@ -6,7 +6,6 @@ const watchlistSchema = new Schema({
     user:{
         type:mongoose.Types.ObjectId,
         require:true,
-        unique:true,
         ref:'Users'
     },
     movieCount:{
@@ -19,12 +18,10 @@ const watchlistSchema = new Schema({
     },
     movies:[{
         type:mongoose.Types.ObjectId,
-        unique:true,
         ref:'Movies',
     }],
     shows:[{
         type:Schema.Types.ObjectId,
-        unique:true,
         ref:'Shows',
     }],
 })

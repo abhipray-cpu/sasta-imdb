@@ -81,6 +81,7 @@ exports.movies = async (req,res,next)=>{
 
 }
 
+//iska dekhna pdega thoda
 exports.shows = async (req,res,next)=>{
    try{
     let show_name = req.params.showName;
@@ -89,6 +90,7 @@ exports.shows = async (req,res,next)=>{
         let item = show[0]
         let show_id = item._id;
      //fetching the reviews for movie
+     console.log(item)
     
      try{
         let result =  await shows.updateOne({_id:show_id},{$set:{'viewCount':item.viewCount+1}}) //this will be used while finding trending items
@@ -119,6 +121,7 @@ req.session.episodes = {'season':seasons,'episodes':item.episodes}
             casts:item.casts,
             likeCount:item.likeCount,
             watchlist:item.movieListCount,
+            eps:Object.keys(items.episodes).length,
             rank:item.rank,
             views:item.viewCount,
             rating:item.ratings,
@@ -129,12 +132,13 @@ req.session.episodes = {'season':seasons,'episodes':item.episodes}
         })
     }
     else{
+        console.log(err)
         res.render('error.ejs')
     }
    }
    catch(err){
     logger.log({level:'error',message:`unable to fetch the show for doc ${req.params.showName}`})
-    res.render('500.ejs')
+    res.render('error.ejs')
    }
 }
 
