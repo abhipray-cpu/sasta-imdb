@@ -84,7 +84,7 @@ exports.landingPage = async(req,res,next)=>{
         })
         }
         catch(err){
-            console.log(err)
+            logger.log({'level':'error','message':`unable to fetch landing page for ${req.session.userId}`})
             res.render('error.ejs')
         }
     }
@@ -106,7 +106,7 @@ exports.login = (req, res, next) => {
         }
     }
     catch(err){
-        console.log(err)
+        logger.log({'level':'error','message':`unable to get login page for ${req.session.userId}`})
         res.render('error.ejs')
     }
 }
@@ -176,7 +176,7 @@ exports.login_check = (req, res, next) => {
 
    }
    catch(err){
-    console.log(err);
+    logger.log({'level':'error','message':`unable to validate data for ${req.params.name}`})
     res.render('error.ejs')
    }
 }
@@ -263,7 +263,7 @@ exports.signup_check = (req, res, next) => {
         }
         }
         catch(err){
-            console.log(err);
+            logger.log({'level':'warn','message':err})
             res.render('error.ejs')
         }
     }
@@ -371,7 +371,7 @@ exports.changePassword = (req, res, next) => {
                             //since this sending of email might take some time therefore processing it asynchronously
                         return transporter.sendMail(mailOptions)
                             .then(result => {
-                                console.log('mail sent successfully');
+                                logger.log({'level':'info','message':`mail sent successfully `})
                                 //render the same page with a message
                                 res.render('passwordChange1.ejs', {
                                     user: req.session.userId,
@@ -400,13 +400,14 @@ exports.changePassword = (req, res, next) => {
                 })
         })
         .catch(err => {
+            logger.log({'level':'error','message':err})
             const error = new Error('Server side erorr failed to fetch details')
             error.httpStatusCode = 500;
             return next(error);
         })
    }
    catch(err){
-    console.log(err);
+    logger.log({'level':'error','message':err})
     res.render('error.ejs')
    }
 }
@@ -440,7 +441,7 @@ exports.confirmPasswordChange = (req, res, next) => {
         })
     }
     catch(err){
-        console.log(err)
+        logger.log({'level':'error','message':err})
         res.render('error.ejs')
     }
 }
@@ -471,7 +472,7 @@ exports.confirmPasswordChange1 = (req, res, next) => {
     })
   }
   catch(err){
-    console.log(err);
+    logger.log({'level':'error','message':err})
     res.render('error.ejs')
   }
 }
@@ -680,7 +681,7 @@ exports.watchList = async (req,res,next)=>{
     }
    }
    catch(err){
-    console.log(err);
+    logger.log({'level':'error','message':`Unable to fetch watchlist for ${req.session.userId}`})
     res.render('error.ejs')
    }
 }
@@ -848,7 +849,7 @@ exports.addReview=async(req,res,next)=>{
     res.status(204).send();
     }
     catch(err){
-        console.log(err)
+        logger.log({'level':'error','message':`${req.session.userId} failed to add review for ${req.params.name}:${err}`})
         res.status(204).send();
     }
 }
@@ -908,10 +909,10 @@ try{
         email: req.body.email,
         contact:req.body.contact,
     }})
-    console.log(res);
+    logger.log({'level':'info','message':`updated the user details for ${req.session.userId}`})
 }
 catch(err){
-    console.log(err);
+    logger.log({'level':'error','message':`failed to update the user details for ${req.session.userId}`})
 }
     res.redirect('/user')
 }
@@ -953,7 +954,7 @@ exports.getRecommendation = async(req,res,next)=>{
     })
  }
  catch(err){
-    console.log(err);
+    logger.log({'level':'error','message':`failed to get recommendation for the user: ${req.session.userId}`})
     res.render('error.ejs')
  }
     

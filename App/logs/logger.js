@@ -1,27 +1,47 @@
 const winston = require('winston');
+const { combine, timestamp, printf, colorize, align } = winston.format;
+const errorFilter = winston.format((info, opts) => {
+  return info.level === 'error' ? info : false;
+});
 
+const infoFilter = winston.format((info, opts) => {
+  return info.level === 'info' ? info : false;
+});
+
+const warnFilter = winston.format((info, opts) => {
+  return info.level === 'warn' ? info : false;
+});
 const logger = winston.createLogger({
-  level: 'info',
-  format: winston.format.json(),
-  defaultMeta: { service: 'user-service' },
+  level: process.env.LOG_LEVEL || 'info',
+  format: combine(
+    colorize({ all: true }),
+    timestamp({
+      format: 'YYYY-MM-DD hh:mm:ss.SSS A',
+    }),
+    
+    align(),
+    printf((info) => `[${info.timestamp}] ${info.level}: ${info.message}`)
+  ),
   transports: [
-    //
-    // - Write all logs with importance level of `error` or less to `error.log`
-    // - Write all logs with importance level of `info` or less to `combined.log`
-    //
-    new winston.transports.File({ filename: 'error.log', level: 'error' }),
-    new winston.transports.File({ filename: 'combined.log' }),
+    new winston.transports.File({
+      filename: './logs/combined.log',
+    }),
+    new winston.transports.File({
+      filename: './logs/app-error.log',
+      level: 'error',
+      format: combine(errorFilter(), timestamp()),
+    }),
+    new winston.transports.File({
+      filename: './logs/app-info.log',
+      level: 'info',
+      format: combine(infoFilter(), timestamp()),
+    }),
+    new winston.transports.File({
+      filename: './logs/app-warn.log',
+      level: 'warn',
+      format: combine(warnFilter(), timestamp()),
+    }),
   ],
 });
 
-//
-// If we're not in production then log to the `console` with the format:
-// `${info.level}: ${info.message} JSON.stringify({ ...rest }) `
-//
-if (process.env.NODE_ENV !== 'production') {
-  logger.add(new winston.transports.Console({
-    format: winston.format.simple(),
-  }));
-}
-
-module.exports = logger
+module.exports = logger;

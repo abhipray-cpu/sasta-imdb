@@ -5,6 +5,7 @@ const oscar =  require('../model/oscar')
 const Actor =  require('../model/actors')
 const mov_review = require('../model/reviews_movie')
 const show_review = require('../model/reviews_show')
+const logger = require('../logs/logger')
 const { name } = require('ejs')
 exports.home = (req,res,next)=>{
     res.render('home.ejs',{
@@ -13,11 +14,6 @@ exports.home = (req,res,next)=>{
 } 
  
 
-exports.searchMenu = (req,res,next)=>{
-    res.render('search-menu.ejs',{
-        validated:req.session.isloggedIn,
-    })
-}
 //will be fetching the data for movie using the movie title
 exports.movies = async (req,res,next)=>{
    try{
@@ -30,10 +26,10 @@ exports.movies = async (req,res,next)=>{
      //fetching the reviews for movie
      try{
         let result = await movies.updateOne({_id:mov_id},{$set:{'viewCount':item.viewCount+1}}) //this will be used while finding trending items
-     console.log(result) 
+        logger.log({level:'info',message:`update the view count for${item.title}`})
     }
      catch(err){
-        console.log(err);
+        logger.log({level:'warn',message:`unable to update the view count for${item.title}`})
      }
      let revs = await mov_review.find({movie:item.title}).populate('user','name')
      if(revs.length == 0)
@@ -41,7 +37,6 @@ exports.movies = async (req,res,next)=>{
      else
      reviews=revs
 //update the viewcount of the movie
-console.log(revs)
         res.render('movies.ejs',{
             id:item._id,
             title:item.title,
@@ -60,11 +55,27 @@ console.log(revs)
         })
     }
     else{
-        res.render('500.ejs')
+        logger.log({level:'warn',message:`unable to fetch reviews for${item.title}`})
+        res.render('movies.ejs',{
+            id:item._id,
+            title:item.title,
+            images:item.images,
+            description:item.description,
+            category:item.category,
+            casts:item.casts,
+            likeCount:item.likeCount,
+            watchlist:item.movieListCount,
+            rank:item.rank,
+            views:item.viewCount,
+            rating:item.ratings,
+            reviews:[],
+            type:'movie',
+            validated:req.session.isloggedIn,
+        })
     }
    }
    catch(err){
-    console.log(err);
+    logger.log({level:'error',message:`unable to fetch movie ${req.params.movName}`})
     res.render('error.ejs')
    }
 
@@ -81,10 +92,10 @@ exports.shows = async (req,res,next)=>{
     
      try{
         let result =  await shows.updateOne({_id:show_id},{$set:{'viewCount':item.viewCount+1}}) //this will be used while finding trending items
-     console.log(result) 
+        logger.log({level:'info',message:`updated the viewcount for ${item.title}`})
     }
      catch(err){
-        console.log(err);
+        logger.log({level:'warn',message:`unable to update the viewcount for${item.title}`})
      }
      let revs = await mov_review.find({movie:item.title})
      if(revs.length == 0)
@@ -122,7 +133,7 @@ req.session.episodes = {'season':seasons,'episodes':item.episodes}
     }
    }
    catch(err){
-    console.log(err)
+    logger.log({level:'error',message:`unable to fetch the show for doc ${req.params.showName}`})
     res.render('500.ejs')
    }
 }
@@ -132,7 +143,6 @@ exports.actors = async(req,res,next)=>{
         let actor_name = req.params.name;
     let actor = await Actor.find({name:actor_name})
     if(actor){
-        console.log(actor)
    // parsing actor details
    let name = actor[0].name;
    let bio = actor[0].bio;
@@ -176,6 +186,7 @@ exports.actors = async(req,res,next)=>{
     })
     }
     else{
+        logger.log({'level':'warn','message':`no data found for ${req.params.name}`})
           res.render('actor.ejs',{
         validated:req.session.isloggedIn,
         record:false,
@@ -194,7 +205,7 @@ exports.actors = async(req,res,next)=>{
     }
     }
     catch(err){
-        console.log(err)
+        logger.log({'level':'error','message':`no data found for ${req.params.name}`})
         res.render('actor.ejs',{
             validated:req.session.isloggedIn,
             record:false,
@@ -229,7 +240,7 @@ exports.epDetails = (req,res,next)=>{
      })
   }
   catch(err){
-    console.log(err)
+    logger.log({'level':'error','message':`no data found for ${req.params.title}`})
     res.render('error.ejs')
   }
 }
@@ -245,7 +256,7 @@ exports.trending = async(req,res,next)=>{
     })
     }
     catch(err){
-        console.log(err)
+        logger.log({'level':'error','message':`unable to fetch trending data!`})
         res.render('error.ejs')
     }
 }
@@ -260,7 +271,6 @@ exports.searchResult=async(req,res,next)=>{
     let searchVal = req.body.value;
     let result1 = await movies.find({$text:{$search:searchVal}}).limit(20);
     let result2 = await shows.find({$text:{$search:searchVal}}).limit(20);
-    console.log(result1)
     if(result1.length>0 || result2.length>0){
      return res.render('search.ejs',{
          title:'search',
@@ -283,7 +293,7 @@ exports.searchResult=async(req,res,next)=>{
     }
    }
    catch(err){
-    console.log(err);
+    logger.log({'level':'error','message':`unable to fetch results for ${req.body.value}`})
     res.render('error.ejs')
    }
 }
