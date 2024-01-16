@@ -75,7 +75,7 @@ exports.movies = async (req,res,next)=>{
     }
    }
    catch(err){
-    logger.log({level:'error',message:`unable to fetch movie ${req.params.movName}`})
+    logger.log({level:'error',message:`unable to fetch movie ${req.params.movName}:${err}`})
     res.render('error.ejs')
    }
 
@@ -90,7 +90,7 @@ exports.shows = async (req,res,next)=>{
         let item = show[0]
         let show_id = item._id;
      //fetching the reviews for movie
-     console.log(item)
+
     
      try{
         let result =  await shows.updateOne({_id:show_id},{$set:{'viewCount':item.viewCount+1}}) //this will be used while finding trending items
@@ -121,7 +121,7 @@ req.session.episodes = {'season':seasons,'episodes':item.episodes}
             casts:item.casts,
             likeCount:item.likeCount,
             watchlist:item.movieListCount,
-            eps:Object.keys(items.episodes).length,
+            eps:Object.keys(item.episodes).length,
             rank:item.rank,
             views:item.viewCount,
             rating:item.ratings,
@@ -132,12 +132,12 @@ req.session.episodes = {'season':seasons,'episodes':item.episodes}
         })
     }
     else{
-        console.log(err)
+        logger.log({level:'error',message:`unable to fetch the show for doc ${req.params.showName}:${err}`})
         res.render('error.ejs')
     }
    }
    catch(err){
-    logger.log({level:'error',message:`unable to fetch the show for doc ${req.params.showName}`})
+    logger.log({level:'error',message:`unable to fetch the show for doc ${req.params.showName}:${err}`})
     res.render('error.ejs')
    }
 }
@@ -209,7 +209,7 @@ exports.actors = async(req,res,next)=>{
     }
     }
     catch(err){
-        logger.log({'level':'error','message':`no data found for ${req.params.name}`})
+        logger.log({'level':'error','message':`no data found for ${req.params.name}:${err}`})
         res.render('actor.ejs',{
             validated:req.session.isloggedIn,
             record:false,
@@ -244,7 +244,7 @@ exports.epDetails = (req,res,next)=>{
      })
   }
   catch(err){
-    logger.log({'level':'error','message':`no data found for ${req.params.title}`})
+    logger.log({'level':'error','message':`no data found for ${req.params.title}:${err}`})
     res.render('error.ejs')
   }
 }
@@ -260,7 +260,7 @@ exports.trending = async(req,res,next)=>{
     })
     }
     catch(err){
-        logger.log({'level':'error','message':`unable to fetch trending data!`})
+        logger.log({'level':'error','message':`unable to fetch trending data!:${err}`})
         res.render('error.ejs')
     }
 }
@@ -297,7 +297,7 @@ exports.searchResult=async(req,res,next)=>{
     }
    }
    catch(err){
-    logger.log({'level':'error','message':`unable to fetch results for ${req.body.value}`})
+    logger.log({'level':'error','message':`unable to fetch results for ${req.body.value}:${err}`})
     res.render('error.ejs')
    }
 }

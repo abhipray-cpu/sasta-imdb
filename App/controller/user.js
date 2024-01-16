@@ -84,7 +84,7 @@ exports.landingPage = async(req,res,next)=>{
         })
         }
         catch(err){
-            logger.log({'level':'error','message':`unable to fetch landing page for ${req.session.userId}`})
+            logger.log({'level':'error','message':`unable to fetch landing page for ${req.session.userId}:${err}`})
             res.render('error.ejs')
         }
     }
@@ -106,7 +106,7 @@ exports.login = (req, res, next) => {
         }
     }
     catch(err){
-        logger.log({'level':'error','message':`unable to get login page for ${req.session.userId}`})
+        logger.log({'level':'error','message':`unable to get login page for ${req.session.userId}:${err}`})
         res.render('error.ejs')
     }
 }
@@ -174,7 +174,7 @@ exports.login_check = (req, res, next) => {
 
    }
    catch(err){
-    logger.log({'level':'error','message':`unable to validate data for ${req.params.name}`})
+    logger.log({'level':'error','message':`unable to validate data for ${req.params.name}:${err}`})
     res.render('error.ejs')
    }
 }
@@ -232,10 +232,7 @@ exports.signup_check = (req, res, next) => {
                                         logger.info('mail sent successfully')
                                     })
                                     .catch(err => {
-                                        logger.log('{level:error,message:failed to send mail}')
-                                        const error = new Error('Server side erorr failed to send mail')
-                                        error.httpStatusCode = 500;
-                                        return next(error);
+                                        logger.log({'level':'error','message':`failed to send mail:${err}`})
                                     })
                             })
                             .catch(err => logger.log({level:'error',message:err}))
